@@ -27,8 +27,8 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
-    username: didi_meeting
-    password: aoZ3B6bcBM
+    username: root
+    password: root
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
   http:
