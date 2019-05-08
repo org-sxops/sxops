@@ -21,6 +21,7 @@ public class TestController extends BaseController {
     })
     @GetMapping("nameAndId")
     public String getUser(String name,String id){
+        System.out.println(name + id);
         return name + id;
     }
 }
