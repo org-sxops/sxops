@@ -46,7 +46,7 @@ public class SwaggerConfig {
      */
     private ApiInfo apiInfo() {
         ApiInfo apiInfo = new ApiInfoBuilder()
-                .title("滴滴会议室API-"+profile+"环境: "+serviceName)
+                .title("临汾同城生活圈API-"+profile+"环境: "+serviceName)
                 .version("1.0")
                 .build();
         return apiInfo;
