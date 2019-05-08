@@ -18,5 +18,6 @@ public class EcmApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EcmApplication.class, args);
+		System.out.println("ecm服务启动");
 	}
 }

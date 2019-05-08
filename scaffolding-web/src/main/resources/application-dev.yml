@@ -6,6 +6,11 @@ server:
 
 logging:
   path: ../logs
+  level:
+    root: INFO
+    com.camelotchina.www.dao.model: debug
+    config: classpath:logback-spring.xml
+
 
 spring:
   datasource:
