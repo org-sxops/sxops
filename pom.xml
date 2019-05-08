@@ -3,22 +3,22 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.camelotchina.www</groupId>
-	<artifactId>scaffolding</artifactId>
+	<groupId>com.sxops.www</groupId>
+	<artifactId>sxops</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>scaffolding</name>
-	<description>滴滴会议室</description>
+	<name>sxops</name>
+	<description>壹加柒</description>
 
 	<modules>
-		<module>scaffolding-common</module>
-		<module>scaffolding-dao</module>
-		<module>scaffolding-service</module>
-		<module>scaffolding-scheduler</module>
-		<module>scaffolding-web</module>
-		<module>scaffolding-ecm</module>
-		<module>scaffolding-parent</module>
+		<module>sxops-common</module>
+		<module>sxops-dao</module>
+		<module>sxops-service</module>
+		<module>sxops-scheduler</module>
+		<module>sxops-web</module>
+		<module>sxops-ecm</module>
+		<module>sxops-parent</module>
 	</modules>
 
 
