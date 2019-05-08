@@ -11,10 +11,6 @@
 	<name>scaffolding</name>
 	<description>滴滴会议室</description>
 
-
-
-	
-
 	<modules>
 		<module>scaffolding-common</module>
 		<module>scaffolding-dao</module>
