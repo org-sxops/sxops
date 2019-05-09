@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 所有定时调度任务 -->
+<schedulers hasChildren="true">
+
+    <!--<scheduler>
+        <job-group>testJobGroup</job-group>
+        <job-name>prepareOffline</job-name>
+        <trigger-group>testTriggerGroup</trigger-group>
+        <trigger-name>prepareOfflineTest</trigger-name>
+        &lt;!&ndash; 凌晨执行一次 &ndash;&gt;
+        <cron>1 0 0 * * ?</cron>
+        &lt;!&ndash; 调用接口信息 &ndash;&gt;
+        <resource>
+            <name>测试</name>
+            <url>http://localhost:8080/test/test</url>
+            <method>GET</method>
+        </resource>
+    </scheduler>-->
+
+</schedulers>
