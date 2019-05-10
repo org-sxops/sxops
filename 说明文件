@@ -1,2 +1,2 @@
 启动之前本地新增一个数据库:test
-启动之后,打开浏览器 : 输入 http://localhost:8081/api/web/swagger-ui.html
+                                                             启动之后,打开浏览器 : 输入 http://localhost:8081/api/web/swagger-ui.html
