@@ -33,13 +33,6 @@
 	</properties>
 
 	<dependencies>
-		<!--代码生成 start-->
-		<!--<dependency>-->
-			<!--<groupId>com.camelot.core</groupId>-->
-			<!--<artifactId>camelot-generator</artifactId>-->
-			<!--<version>${camelot-generator.version}</version>-->
-		<!--</dependency>-->
-		<!--代码生成 end-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -81,15 +74,25 @@
 					<dependency>
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>
+						<version>5.1.6</version>
+					</dependency>
+					<!--<dependency>
+						<groupId>tk.mybatis</groupId>
+						<artifactId>mapper</artifactId>
+					</dependency>-->
+					<dependency>
+						<groupId>org.mybatis.generator</groupId>
+						<artifactId>mybatis-generator-core</artifactId>
+						<version>${mybatis.generator.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>tk.mybatis</groupId>
 						<artifactId>mapper</artifactId>
+						<version>3.4.0</version>
 					</dependency>
 				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE generatorConfiguration
-  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
-  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
-
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 
     <context id="Mysql" defaultModelType="flat">
@@ -15,10 +12,10 @@
             <property name="mappers" value="com.sxops.www.dao.util.MyBaseMapper"/>
         </plugin>
 
-        <jdbcConnection connectionURL="jdbc:mysql://10.95.121.181:3306/didi_meeting_dev"
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/test?characterEncoding=utf8"
                         driverClass="com.mysql.jdbc.Driver"
-                        userId="didi_meeting"
-                        password="aoZ3B6bcBM">
+                        userId="root"
+                        password="root">
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}"/>
@@ -28,7 +25,7 @@
         <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="MIXEDMAPPER" />
 
         <!-- 控制生成文件和XML的内容 -->
-        <table tableName="user_action_log" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        <table tableName="user_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
     </context>
 </generatorConfiguration>
