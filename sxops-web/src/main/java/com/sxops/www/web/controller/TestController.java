@@ -1,6 +1,6 @@
 package com.sxops.www.web.controller;
 
-import com.sxops.www.dao.model.UserInfo;
+import com.sxops.www.dao.model.LUserInfo;
 import com.sxops.www.service.UserInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -24,11 +24,10 @@ public class TestController extends BaseController {
 
     @ApiOperation(value = "新增接口,[geweiHome@163.com]")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "name", value = "名称", paramType = "query"),
-            @ApiImplicitParam(name = "nameEn", value = "英文名称", paramType = "query")
+            @ApiImplicitParam(name = "userName", value = "名称", paramType = "query"),
     })
     @GetMapping("addUser")
-    public UserInfo addUser(@ApiIgnore UserInfo userInfo) {
+    public LUserInfo addUser( LUserInfo userInfo) {
         userInfoService.insert(userInfo);
         return userInfo;
     }
@@ -36,12 +35,12 @@ public class TestController extends BaseController {
 
     @ApiOperation(value = "查询接口,[geweiHome@163.com]")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "name", value = "名称", paramType = "query"),
-            @ApiImplicitParam(name = "nameEn", value = "英文名称", paramType = "query")
+            @ApiImplicitParam(name = "userName", value = "名称", paramType = "query"),
+            @ApiImplicitParam(name = "phoneNum", value = "手机号", paramType = "query")
     })
     @GetMapping("getUser")
-    public List<UserInfo> getUser(@ApiIgnore UserInfo userInfo) {
-        List<UserInfo> userList = userInfoService.select(userInfo);
+    public List<LUserInfo> getUser(@ApiIgnore LUserInfo userInfo) {
+        List<LUserInfo> userList = userInfoService.select(userInfo);
         return userList;
     }
 

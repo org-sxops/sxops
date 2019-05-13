@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxops.www.dao.mapper.LTaskConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.sxops.www.dao.model.LTaskConfig" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="task_uuid" property="taskUuid" jdbcType="VARCHAR" />
+    <result column="task_type" property="taskType" jdbcType="INTEGER" />
+    <result column="task_weight" property="taskWeight" jdbcType="DECIMAL" />
+    <result column="task_pay_amount" property="taskPayAmount" jdbcType="DECIMAL" />
+    <result column="task_start_time" property="taskStartTime" jdbcType="TIMESTAMP" />
+    <result column="task_end_time" property="taskEndTime" jdbcType="TIMESTAMP" />
+    <result column="tsk_time" property="tskTime" jdbcType="INTEGER" />
+    <result column="task_status" property="taskStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.sxops.www.dao.model.LTaskConfig" extends="BaseResultMap" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="task_evaluation" property="taskEvaluation" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    task_uuid, task_type, task_weight, task_pay_amount, task_start_time, task_end_time, 
+    tsk_time, task_status
+  </sql>
+  <sql id="Blob_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    task_evaluation
+  </sql>
+</mapper>
