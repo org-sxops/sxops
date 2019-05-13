@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserInfoService extends BaseService<LUserInfo> {
+    void insertUserInfo(LUserInfo userInfo);
 }

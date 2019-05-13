@@ -57,7 +57,7 @@ public class LUserInfo {
     /**
      * 身份证号码
      */
-    @ApiModelProperty("区域编码")
+    @ApiModelProperty("身份证号码")
     @Column(name = "identity_cards")
     private String identityCards;
 
