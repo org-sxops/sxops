@@ -19,9 +19,11 @@ public class TestController extends BaseController {
     private UserInfoService userInfoService;
 
     @ApiOperation(value = "新增接口,[geweiHome@163.com]")
-
     @PostMapping("addUser")
-    public LUserInfo addUser( @RequestBody @Valid LUserInfo userInfo ) {
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "param",paramType = "body", dataTypeClass = LUserInfo.class)
+    })
+    public LUserInfo addUser( @RequestBody (required = false) LUserInfo userInfo ) {
         userInfoService.insert(userInfo);
         return userInfo;
     }
