@@ -1,5 +1,9 @@
 package com.sxops.www.dao.model;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModelProperty;
+import springfox.documentation.annotations.ApiIgnore;
+
 import java.util.Date;
 import javax.persistence.*;
 
@@ -8,6 +12,7 @@ public class LUserInfo {
     /**
      * ID
      */
+
     @Id
     private Long id;
 
@@ -19,58 +24,68 @@ public class LUserInfo {
     /**
      * 用户名称
      */
+    @ApiModelProperty("用户名称")
     @Column(name = "user_name")
     private String userName;
 
     /**
      * 手机号
      */
+    @ApiModelProperty("手机号")
     @Column(name = "phone_num")
     private Integer phoneNum;
 
     /**
      * 性别
      */
+    @ApiModelProperty("性别")
     private String sex;
 
     /**
      * 详细地址
      */
+    @ApiModelProperty("详细地址")
     private String address;
 
     /**
      * 区域编码
      */
+    @ApiModelProperty("区域编码")
     @Column(name = "area_coding")
     private Integer areaCoding;
 
     /**
      * 身份证号码
      */
+    @ApiModelProperty("区域编码")
     @Column(name = "identity_cards")
     private String identityCards;
 
     /**
      * 车牌号
      */
+    @ApiModelProperty("车牌号")
     @Column(name = "car_number")
     private String carNumber;
 
     /**
      * 营业执照编码
      */
+    @ApiModelProperty("营业执照编码")
     @Column(name = "business_license_num")
     private String businessLicenseNum;
 
     /**
      * 用户类型
      */
+    @ApiModelProperty("用户类型")
     @Column(name = "customer_type")
     private Integer customerType;
 
     /**
      * 用户邮箱
      */
+    @ApiModelProperty("用户邮箱")
     private String email;
 
     /**
@@ -82,11 +97,13 @@ public class LUserInfo {
     /**
      * 状态: 1.启用 2.停用 3.暂时锁定
      */
+    @ApiModelProperty("区域编码")
     private Integer status;
 
     /**
      * 是否删除
      */
+    @ApiModelProperty("区域编码")
     @Column(name = "is_detele")
     private Boolean isDetele;
 

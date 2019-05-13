@@ -2,16 +2,12 @@ package com.sxops.www.web.controller;
 
 import com.sxops.www.dao.model.LUserInfo;
 import com.sxops.www.service.UserInfoService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RequestMapping("test")
@@ -23,11 +19,9 @@ public class TestController extends BaseController {
     private UserInfoService userInfoService;
 
     @ApiOperation(value = "新增接口,[geweiHome@163.com]")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "userName", value = "名称", paramType = "query"),
-    })
-    @GetMapping("addUser")
-    public LUserInfo addUser( LUserInfo userInfo) {
+
+    @PostMapping("addUser")
+    public LUserInfo addUser( @RequestBody @Valid LUserInfo userInfo ) {
         userInfoService.insert(userInfo);
         return userInfo;
     }
