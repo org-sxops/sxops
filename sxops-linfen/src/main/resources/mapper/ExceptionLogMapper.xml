@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxops.www.linfen.dao.mapper.ExceptionLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sxops.www.linfen.dao.model.ExceptionLog">
+			<id column="id" property="id" />
+			<id column="uri" property="uri" />
+			<id column="operator_code" property="operatorCode" />
+			<id column="operator" property="operator" />
+			<id column="operator_ip" property="operatorIp" />
+			<id column="description" property="description" />
+			<id column="host_name" property="hostName" />
+			<id column="detail" property="detail" />
+			<id column="brower_message" property="browerMessage" />
+			<id column="create_time" property="createTime" />
+    </resultMap>
+
+    <!--基本字段列表-->
+    <sql id="Base_Column_List">
+        id,
+        uri,
+        operator_code,
+        operator,
+        operator_ip,
+        description,
+        host_name,
+        detail,
+        brower_message,
+        create_time
+    </sql>
+
+
+
+</mapper>
