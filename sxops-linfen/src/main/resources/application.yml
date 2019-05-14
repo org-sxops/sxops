@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+    ##配置国际化
+  messages:
+    basename: i18n/messages
+    cacheSeconds: 5000
+
+service:
+  name: meeting-web

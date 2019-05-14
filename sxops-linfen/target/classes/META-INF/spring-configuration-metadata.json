@@ -1,0 +1,12 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.sxops.linfen.assembly.redis.RedisConfig",
+      "name": "spring.redis",
+      "sourceMethod": "redisPoolFactory(org.springframework.data.redis.connection.jedis.JedisConnectionFactory)",
+      "type": "redis.clients.jedis.JedisPool"
+    }
+  ],
+  "properties": []
+}
