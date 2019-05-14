@@ -53,7 +53,14 @@
 			<groupId>tk.mybatis</groupId>
 			<artifactId>mapper</artifactId>
 			<version>${mapper.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.persistence</groupId>
+					<artifactId>persistence-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
+
 		<!-- DB & pool & drive end -->
 
 		<!-- pagehelper -->
@@ -161,16 +168,11 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- springframework -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+
 		</dependency>
 
 		<dependency>
@@ -252,7 +254,7 @@
 					<target>8</target>
 				</configuration>
 			</plugin>
-			<!--<plugin>
+			 <plugin>
 				<groupId>org.mybatis.generator</groupId>
 				<artifactId>mybatis-generator-maven-plugin</artifactId>
 				<version>${mybatis.generator.version}</version>
@@ -262,16 +264,15 @@
 					<overwrite>true</overwrite>
 				</configuration>
 				<dependencies>
-					&lt;!&ndash; 数据库驱动 &ndash;&gt;
 					<dependency>
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>
 						<version>5.1.6</version>
 					</dependency>
-					&lt;!&ndash;<dependency>
+					 <dependency>
 						<groupId>tk.mybatis</groupId>
 						<artifactId>mapper</artifactId>
-					</dependency>&ndash;&gt;
+					</dependency>
 					<dependency>
 						<groupId>org.mybatis.generator</groupId>
 						<artifactId>mybatis-generator-core</artifactId>
@@ -283,7 +284,7 @@
 						<version>3.4.0</version>
 					</dependency>
 				</dependencies>
-			</plugin>-->
+			</plugin>
 		</plugins>
 	</build>
 
