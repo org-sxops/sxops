@@ -1,23 +1,6 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : localhost
-Source Server Version : 80016
-Source Host           : localhost:3306
-Source Database       : test
-
-Target Server Type    : MYSQL
-Target Server Version : 80016
-File Encoding         : 65001
-
-Date: 2019-05-15 17:59:47
-*/
 
 SET FOREIGN_KEY_CHECKS=0;
 
--- ----------------------------
--- Table structure for lf_car_info
--- ----------------------------
 DROP TABLE IF EXISTS `lf_car_info`;
 CREATE TABLE `lf_car_info` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT,
@@ -39,9 +22,7 @@ CREATE TABLE `lf_car_info` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='车辆信息表';
 
--- ----------------------------
--- Table structure for lf_journey_client
--- ----------------------------
+
 DROP TABLE IF EXISTS `lf_journey_client`;
 CREATE TABLE `lf_journey_client` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
@@ -64,9 +45,7 @@ CREATE TABLE `lf_journey_client` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='临汾地区_出行_客户表';
 
--- ----------------------------
--- Table structure for lf_journey_server
--- ----------------------------
+
 DROP TABLE IF EXISTS `lf_journey_server`;
 CREATE TABLE `lf_journey_server` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
@@ -91,9 +70,7 @@ CREATE TABLE `lf_journey_server` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='临汾地区_出行_服务表';
 
--- ----------------------------
--- Table structure for lf_user_associated
--- ----------------------------
+
 DROP TABLE IF EXISTS `lf_user_associated`;
 CREATE TABLE `lf_user_associated` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT,
@@ -103,9 +80,7 @@ CREATE TABLE `lf_user_associated` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户和其他业务关联表';
 
--- ----------------------------
--- Table structure for lf_user_info
--- ----------------------------
+
 DROP TABLE IF EXISTS `lf_user_info`;
 CREATE TABLE `lf_user_info` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
@@ -125,3 +100,15 @@ CREATE TABLE `lf_user_info` (
   `create_source` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '创建来源系统',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户信息表';
+CREATE TABLE `operate_log` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `operate_desc` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `operator_code` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `uri` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `operate_ip` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `request` text CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `system` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `operate_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='操作日志表';
+

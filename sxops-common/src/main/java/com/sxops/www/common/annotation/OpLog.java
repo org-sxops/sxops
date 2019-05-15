@@ -25,7 +25,7 @@ public @interface OpLog {
     OpLogMethod method() default OpLogMethod.NORMAL;
 
     /** 日志系统，默认无需填写，只有在pad调用或app调用的时候填写 **/
-    OpLogSystem system() default OpLogSystem.NULL;
+    OpLogSystem system() default OpLogSystem.LINFEN;
 
 
 }

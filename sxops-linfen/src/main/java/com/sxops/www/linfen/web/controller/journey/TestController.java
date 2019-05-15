@@ -1,5 +1,7 @@
 package com.sxops.www.linfen.web.controller.journey;
 
+import com.sxops.www.common.annotation.OpLog;
+import com.sxops.www.common.enums.OpLogMethod;
 import com.sxops.www.linfen.dao.model.journey.LfUserInfo;
 import com.sxops.www.linfen.service.journey.LfUserInfoService;
 import com.sxops.www.linfen.web.controller.basic.BaseController;
@@ -22,6 +24,7 @@ public class TestController extends BaseController {
 
     @ApiOperation(value = "新增接口,[geweiHome@163.com]")
     @PostMapping("addUser")
+    @OpLog(desc = "新增接口" )
     public LfUserInfo addUser(@RequestBody  LfUserInfo userInfo ) {
 
         lfUserInfoService.insertUserInfo(userInfo);
@@ -35,6 +38,7 @@ public class TestController extends BaseController {
             @ApiImplicitParam(name = "phoneNum", value = "手机号", paramType = "query")
     })
     @GetMapping("getUser")
+    @OpLog(desc = "查询接口",method = OpLogMethod.NORMAL_AND_REQUEST)
     public List<LfUserInfo> getUser(@ApiIgnore LfUserInfo userInfo) {
         List<LfUserInfo> userList = lfUserInfoService.select(userInfo);
         return userList;

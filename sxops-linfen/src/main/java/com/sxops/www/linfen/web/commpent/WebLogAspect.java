@@ -5,6 +5,7 @@ import com.sxops.www.common.component.BaseWebLogAspect;
 import com.sxops.www.common.enums.OpLogSystem;
 import com.sxops.www.linfen.dao.model.basic.OperateLog;
 import com.sxops.www.linfen.service.basic.OperateLogService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.scheduling.annotation.Async;
@@ -22,6 +23,7 @@ import java.util.Date;
  */
 @Aspect
 @Component
+@Slf4j
 public class WebLogAspect extends BaseWebLogAspect {
 
     @Resource
@@ -47,12 +49,12 @@ public class WebLogAspect extends BaseWebLogAspect {
             operateLog.setOperateIp(ip);
             operateLog.setOperateTime(operateTime);
             operateLog.setUri(uri);
-            operateLog.setOperateIp(ip);
+            operateLog.setOperatorCode("userName");
             operateLog.setRequest(args);
             requestTooLong(userName, system, operateDesc, uri, ip, args, operateTime);
-            operateLogService.insert(operateLog);
+            operateLogService.insertSelective(operateLog);
         } catch (Exception e) {
-            LOGGER.error(e.toString());
+            log.error("日志插入失败",e);
         }
 
     }

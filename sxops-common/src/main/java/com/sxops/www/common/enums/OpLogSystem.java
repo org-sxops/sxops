@@ -6,7 +6,7 @@ package com.sxops.www.common.enums;
  * @author [尹归晋]
  */
 public enum OpLogSystem {
-    ECM,
+    LINFEN,
     WEB,
     IPAD,
     APP,
