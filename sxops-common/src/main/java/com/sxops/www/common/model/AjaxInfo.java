@@ -124,6 +124,7 @@ public class AjaxInfo<T> {
     public static AjaxInfo renderSuccess(Object data) {
         AjaxInfo ajaxInfo = new AjaxInfo();
         ajaxInfo.setCode(CODE_SUCCESS);
+        ajaxInfo.setMsg("SUCCESS");
         ajaxInfo.setData(data);
         return ajaxInfo;
     }

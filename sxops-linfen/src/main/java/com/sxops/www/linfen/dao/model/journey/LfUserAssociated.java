@@ -1,8 +1,11 @@
 package com.sxops.www.linfen.dao.model.journey;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Table(name = "lf_user_associated")
+@ToString
 public class LfUserAssociated {
     @Id
     private Long id;

@@ -1,9 +1,12 @@
 package com.sxops.www.linfen.dao.model.journey;
 
+import lombok.ToString;
+
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "lf_user_info")
+@ToString
 public class LfUserInfo {
     /**
      * ID
