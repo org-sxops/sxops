@@ -25,15 +25,8 @@
         <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="MIXEDMAPPER" />
 
         <!-- 控制生成文件和XML的内容 -->
-        <table tableName="l_journey_client" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        <table tableName="aaaa" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table tableName="l_journey_server" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table tableName="l_user_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table tableName="l_task_config" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false"/>
-
 
 
 
