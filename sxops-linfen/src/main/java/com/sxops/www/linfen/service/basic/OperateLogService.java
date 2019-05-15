@@ -1,6 +1,6 @@
-package com.sxops.www.linfen.service;
+package com.sxops.www.linfen.service.basic;
 
-import com.sxops.www.linfen.dao.model.OperateLog;
+import com.sxops.www.linfen.dao.model.basic.OperateLog;
 import org.springframework.stereotype.Repository;
 
 /**

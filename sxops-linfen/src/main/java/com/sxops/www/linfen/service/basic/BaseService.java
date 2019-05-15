@@ -1,4 +1,4 @@
-package com.sxops.www.linfen.service;
+package com.sxops.www.linfen.service.basic;
 
 import com.sxops.www.common.model.Pager;
 

@@ -25,10 +25,16 @@
         <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="MIXEDMAPPER" />
 
         <!-- 控制生成文件和XML的内容 -->
-        <table tableName="aaaa" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        <table tableName="lf_journey_server" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
-
-
+        <table tableName="lf_car_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="lf_journey_client" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="lf_user_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="lf_user_associated" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
 
     </context>
 

@@ -1,6 +1,6 @@
-package com.sxops.www.linfen.service;
+package com.sxops.www.linfen.service.basic;
 
-import com.sxops.www.linfen.dao.model.ExceptionLog;
+import com.sxops.www.linfen.dao.model.basic.ExceptionLog;
 
 import javax.servlet.http.HttpServletRequest;
 

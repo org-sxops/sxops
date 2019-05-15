@@ -1,4 +1,4 @@
-package com.sxops.www.linfen.web.controller;
+package com.sxops.www.linfen.web.controller.basic;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.client.utils.DateUtils;

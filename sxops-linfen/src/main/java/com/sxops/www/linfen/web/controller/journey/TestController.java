@@ -1,7 +1,8 @@
-package com.sxops.www.linfen.web.controller;
+package com.sxops.www.linfen.web.controller.journey;
 
-import com.sxops.www.linfen.dao.model.LUserInfo;
-import com.sxops.www.linfen.service.UserInfoService;
+import com.sxops.www.linfen.dao.model.journey.LfUserInfo;
+import com.sxops.www.linfen.service.journey.LfUserInfoService;
+import com.sxops.www.linfen.web.controller.basic.BaseController;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +18,13 @@ import java.util.List;
 public class TestController extends BaseController {
 
     @Autowired
-    private UserInfoService userInfoService;
+    private LfUserInfoService lfUserInfoService;
 
     @ApiOperation(value = "新增接口,[geweiHome@163.com]")
     @PostMapping("addUser")
-    public LUserInfo addUser(@RequestBody  LUserInfo userInfo ) {
+    public LfUserInfo addUser(@RequestBody  LfUserInfo userInfo ) {
 
-        userInfoService.insertUserInfo(userInfo);
+        lfUserInfoService.insertUserInfo(userInfo);
         return userInfo;
     }
 
@@ -34,8 +35,8 @@ public class TestController extends BaseController {
             @ApiImplicitParam(name = "phoneNum", value = "手机号", paramType = "query")
     })
     @GetMapping("getUser")
-    public List<LUserInfo> getUser(@ApiIgnore LUserInfo userInfo) {
-        List<LUserInfo> userList = userInfoService.select(userInfo);
+    public List<LfUserInfo> getUser(@ApiIgnore LfUserInfo userInfo) {
+        List<LfUserInfo> userList = lfUserInfoService.select(userInfo);
         return userList;
     }
 

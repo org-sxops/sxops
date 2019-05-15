@@ -1,4 +1,4 @@
-package com.sxops.www.linfen.dao.model;
+package com.sxops.www.linfen.dao.model.basic;
 
 
 import com.sxops.www.common.annotation.Ignore;

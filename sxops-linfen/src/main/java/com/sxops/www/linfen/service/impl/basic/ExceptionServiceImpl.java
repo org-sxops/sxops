@@ -1,9 +1,9 @@
-package com.sxops.www.linfen.service.impl;
+package com.sxops.www.linfen.service.impl.basic;
 
 import com.sxops.www.common.util.NetUtil;
-import com.sxops.www.linfen.dao.model.ExceptionLog;
-import com.sxops.www.linfen.service.ExceptionLogService;
-import com.sxops.www.linfen.service.ExceptionService;
+import com.sxops.www.linfen.dao.model.basic.ExceptionLog;
+import com.sxops.www.linfen.service.basic.ExceptionLogService;
+import com.sxops.www.linfen.service.basic.ExceptionService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

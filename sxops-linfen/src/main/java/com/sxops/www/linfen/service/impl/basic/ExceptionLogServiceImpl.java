@@ -1,12 +1,12 @@
-package com.sxops.www.linfen.service.impl;
+package com.sxops.www.linfen.service.impl.basic;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sxops.www.common.model.Pager;
 import com.sxops.www.common.util.StringUtils;
-import com.sxops.www.linfen.dao.model.ExceptionLog;
-import com.sxops.www.linfen.dao.mapper.ExceptionLogMapper;
-import com.sxops.www.linfen.service.ExceptionLogService;
+import com.sxops.www.linfen.dao.model.basic.ExceptionLog;
+import com.sxops.www.linfen.dao.mapper.basic.ExceptionLogMapper;
+import com.sxops.www.linfen.service.basic.ExceptionLogService;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 

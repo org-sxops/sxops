@@ -1,6 +1,6 @@
-package com.sxops.www.linfen.dao.mapper;
+package com.sxops.www.linfen.dao.mapper.basic;
 
-import com.sxops.www.linfen.dao.model.ExceptionLog;
+import com.sxops.www.linfen.dao.model.basic.OperateLog;
 import com.sxops.www.linfen.dao.util.MyBaseMapper;
 
 
@@ -11,7 +11,7 @@ import com.sxops.www.linfen.dao.util.MyBaseMapper;
  * @version 1.0
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  */
-public interface ExceptionLogMapper extends MyBaseMapper<ExceptionLog> {
+public interface OperateLogMapper extends MyBaseMapper<OperateLog> {
 
 
 }

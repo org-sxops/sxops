@@ -1,4 +1,4 @@
-package com.sxops.www.linfen.service.impl;
+package com.sxops.www.linfen.service.impl.basic;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -6,7 +6,7 @@ import com.sxops.www.common.annotation.Ignore;
 import com.sxops.www.common.annotation.Like;
 import com.sxops.www.common.model.Pager;
 import com.sxops.www.linfen.dao.util.MyBaseMapper;
-import com.sxops.www.linfen.service.BaseService;
+import com.sxops.www.linfen.service.basic.BaseService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

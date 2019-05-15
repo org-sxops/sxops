@@ -16,11 +16,11 @@
         <!-- MyBatis -->
         <!-- Java接口和实体类 -->
         <targetJavaProject>src/main/java</targetJavaProject>
-        <targetMapperPackage>com.sxops.www.linfen.dao.mapper</targetMapperPackage>
-        <targetModelPackage>com.sxops.www.linfen.dao.model</targetModelPackage>
+        <targetMapperPackage>com.sxops.www.linfen.dao.mapper.journey</targetMapperPackage>
+        <targetModelPackage>com.sxops.www.linfen.dao.model.journey</targetModelPackage>
         <!-- XML生成路径 -->
         <targetResourcesProject>src/main/resources</targetResourcesProject>
-        <targetXMLPackage>mapper</targetXMLPackage>
+        <targetXMLPackage>mapper/journey</targetXMLPackage>
         <camelot-generator.version>1.0-RELEASE</camelot-generator.version>
     </properties>
     <parent>
