@@ -1,70 +1,127 @@
- 
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost
+Source Server Version : 80016
+Source Host           : localhost:3306
+Source Database       : test
+
+Target Server Type    : MYSQL
+Target Server Version : 80016
+File Encoding         : 65001
+
+Date: 2019-05-15 17:59:47
+*/
 
 SET FOREIGN_KEY_CHECKS=0;
 
- 
-DROP TABLE IF EXISTS `l_journey_client`;
-CREATE TABLE `l_journey_client` (
+-- ----------------------------
+-- Table structure for lf_car_info
+-- ----------------------------
+DROP TABLE IF EXISTS `lf_car_info`;
+CREATE TABLE `lf_car_info` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `car_brand` varchar(50) CHARACTER SET utf8 DEFAULT '' COMMENT '车辆品牌',
+  `car_name` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '车辆名称',
+  `car_area_coding` varchar(50) CHARACTER SET utf8 DEFAULT '' COMMENT '车辆所属地区编码',
+  `car_colour` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '车辆颜色',
+  `car_year` date DEFAULT NULL COMMENT '年份',
+  `car_license_plate` varchar(10) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '车牌',
+  `number_of_passengers` int(3) DEFAULT NULL COMMENT '核载人数',
+  `driver_license_photo_url` varchar(50) CHARACTER SET utf8 DEFAULT '' COMMENT '驾驶证照片',
+  `driving_license_photo_url` varchar(50) CHARACTER SET utf8 DEFAULT '' COMMENT '行驶证照片',
+  `car_appearance_photo_url` varchar(50) CHARACTER SET utf8 DEFAULT '' COMMENT '车辆外观照片',
+  `enable` int(2) DEFAULT '1' COMMENT '是否启用',
+  `owned_user_uuid` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '车辆所属用户',
+  `create_time` datetime DEFAULT NULL COMMENT '修改时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='车辆信息表';
+
+-- ----------------------------
+-- Table structure for lf_journey_client
+-- ----------------------------
+DROP TABLE IF EXISTS `lf_journey_client`;
+CREATE TABLE `lf_journey_client` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `massage_uuid` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '任务UUID',
   `user_info_uuid` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '用户UUID',
   `originating_place` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '始发地',
   `objective_place` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '目的地',
   `es_departure_time` datetime DEFAULT NULL COMMENT '预计出发时间',
   `es_arrival_time` datetime DEFAULT NULL COMMENT '预计到达时间',
   `describe` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '简短描述',
-  `task_uuid` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '任务UUID',
+  `total_number` int(2) DEFAULT NULL COMMENT '总人数',
+  `is_top` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '是否置顶',
+  `top_time` bigint(11) DEFAULT NULL COMMENT '置顶时长',
+  `top_expiration_date` datetime DEFAULT NULL COMMENT '置顶过期时间',
+  `enable` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '是否启用',
+  `last_refresh_time` datetime DEFAULT NULL COMMENT '最后刷新时间',
+  `top_weight` decimal(18,2) DEFAULT '0.00' COMMENT '置顶权重',
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='临汾地区_出行_客户表';
 
- 
-DROP TABLE IF EXISTS `l_journey_server`;
-CREATE TABLE `l_journey_server` (
+-- ----------------------------
+-- Table structure for lf_journey_server
+-- ----------------------------
+DROP TABLE IF EXISTS `lf_journey_server`;
+CREATE TABLE `lf_journey_server` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `massage_uuid` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '任务UUID',
   `user_info_uuid` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '用户UUID',
   `originating_place` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '始发地',
   `objective_place` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '目的地',
+  `surplus_number` int(3) DEFAULT NULL COMMENT '可乘人数',
+  `number_of_passengers` int(3) DEFAULT NULL COMMENT '总载人数',
+  `describe` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '简短描述',
   `es_departure_time` datetime DEFAULT NULL COMMENT '预计出发时间',
   `es_arrival_time` datetime DEFAULT NULL COMMENT '预计到达时间',
   `driving_time` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '预计行驶时间',
-  `describe` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '简短描述',
-  `task_uuid` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '任务UUID',
+  `is_top` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '是否置顶',
+  `top_time` bigint(11) DEFAULT NULL COMMENT '置顶时长',
+  `top_expiration_date` datetime DEFAULT NULL COMMENT '置顶过期时间',
+  `enable` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '是否启用',
+  `last_refresh_time` datetime DEFAULT NULL COMMENT '最后刷新时间',
+  `top_weight` decimal(18,2) DEFAULT '0.00' COMMENT '置顶权重',
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='临汾地区_出行_服务表';
 
- 
-DROP TABLE IF EXISTS `l_task_config`;
-CREATE TABLE `l_task_config` (
-  `task_uuid` varchar(40) NOT NULL COMMENT '任务ID',
-  `task_type` int(2) DEFAULT '0' COMMENT '任务类型',
-  `task_weight` decimal(14,2) DEFAULT NULL COMMENT '任务权重',
-  `task_pay_amount` decimal(14,2) DEFAULT NULL COMMENT '支付金额',
-  `task_start_time` datetime DEFAULT NULL COMMENT '任务开始时间',
-  `task_end_time` datetime DEFAULT NULL COMMENT '任务结束时间',
-  `tsk_time` int(11) DEFAULT '120' COMMENT '任务时长(分钟为单位)',
-  `task_status` int(11) DEFAULT '0' COMMENT '任务状态:0,未激活 1.已激活.2已过期',
-  `task_evaluation` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT '任务评价/建议',
-  PRIMARY KEY (`task_uuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='任务管理';
-
- 
-DROP TABLE IF EXISTS `l_user_info`;
-CREATE TABLE `l_user_info` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `uuid` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'UUID',
-  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '用户名称',
-  `phone_num` int(11) DEFAULT '0' COMMENT '手机号',
-  `sex` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '性别',
-  `address` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '详细地址',
-  `area_coding` int(11) DEFAULT '0' COMMENT '区域编码',
-  `identity_cards` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '身份证号码',
-  `car_number` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '车牌号',
-  `business_license_num` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '营业执照编码',
-  `customer_type` int(2) DEFAULT NULL COMMENT '用户类型',
-  `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '用户邮箱',
-  `avatarUrl` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '用户头像URL',
-  `status` int(2) DEFAULT '0' COMMENT '状态: 1.启用 2.停用 3.暂时锁定',
-  `is_detele` tinyint(4) DEFAULT NULL COMMENT '是否删除',
-  `create_datetime` datetime DEFAULT NULL COMMENT '创建时间',
-  `update_datetime` datetime DEFAULT NULL COMMENT '更新时间',
+-- ----------------------------
+-- Table structure for lf_user_associated
+-- ----------------------------
+DROP TABLE IF EXISTS `lf_user_associated`;
+CREATE TABLE `lf_user_associated` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `user_uuid` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '用户uuid',
+  `other_uuid` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '其他属性UUID',
+  `other_type` int(20) NOT NULL COMMENT '其他属性类型 ',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户信息表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户和其他业务关联表';
+
+-- ----------------------------
+-- Table structure for lf_user_info
+-- ----------------------------
+DROP TABLE IF EXISTS `lf_user_info`;
+CREATE TABLE `lf_user_info` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `uuid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户唯一UUID',
+  `user_name` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '用户名称',
+  `password` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '密码',
+  `sex` varchar(2) CHARACTER SET utf8 DEFAULT '' COMMENT '性别',
+  `identity_cards` varchar(25) CHARACTER SET utf8 DEFAULT '' COMMENT '身份证号',
+  `phone` varchar(20) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '手机号',
+  `avatarUrl` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '头像URL',
+  `area_coding` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '所在区域编码',
+  `address` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '详细地址',
+  `user_type` varchar(50) CHARACTER SET utf8 DEFAULT '' COMMENT '用户类型',
+  `enabled` varchar(10) CHARACTER SET utf8 DEFAULT '1' COMMENT '是否启用',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `updata_time` datetime NOT NULL COMMENT '更新时间',
+  `create_source` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '创建来源系统',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户信息表';

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxops.www.linfen.dao.mapper.journey.LfCarInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.sxops.www.linfen.dao.model.journey.LfCarInfo" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="uuid" property="uuid" jdbcType="VARCHAR" />
+    <result column="car_brand" property="carBrand" jdbcType="VARCHAR" />
+    <result column="car_name" property="carName" jdbcType="VARCHAR" />
+    <result column="car_area_coding" property="carAreaCoding" jdbcType="VARCHAR" />
+    <result column="car_colour" property="carColour" jdbcType="VARCHAR" />
+    <result column="car_year" property="carYear" jdbcType="DATE" />
+    <result column="car_license_plate" property="carLicensePlate" jdbcType="VARCHAR" />
+    <result column="number_of_passengers" property="numberOfPassengers" jdbcType="INTEGER" />
+    <result column="driver_license_photo_url" property="driverLicensePhotoUrl" jdbcType="VARCHAR" />
+    <result column="driving_license_photo_url" property="drivingLicensePhotoUrl" jdbcType="VARCHAR" />
+    <result column="car_appearance_photo_url" property="carAppearancePhotoUrl" jdbcType="VARCHAR" />
+    <result column="enable" property="enable" jdbcType="INTEGER" />
+    <result column="owned_user_uuid" property="ownedUserUuid" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, uuid, car_brand, car_name, car_area_coding, car_colour, car_year, car_license_plate, 
+    number_of_passengers, driver_license_photo_url, driving_license_photo_url, car_appearance_photo_url, 
+    enable, owned_user_uuid, create_time, update_time
+  </sql>
+</mapper>
