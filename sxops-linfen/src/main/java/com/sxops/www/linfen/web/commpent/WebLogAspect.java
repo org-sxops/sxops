@@ -1,10 +1,10 @@
 package com.sxops.www.linfen.web.commpent;
 
 import com.alibaba.fastjson.JSONObject;
-import com.sxops.www.linfen.common.component.BaseWebLogAspect;
-import com.sxops.www.linfen.common.enums.OpLogSystem;
-import com.sxops.www.linfen.service.OperateLogService;
+import com.sxops.www.common.component.BaseWebLogAspect;
+import com.sxops.www.common.enums.OpLogSystem;
 import com.sxops.www.linfen.dao.model.OperateLog;
+import com.sxops.www.linfen.service.OperateLogService;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.scheduling.annotation.Async;
@@ -36,12 +36,12 @@ public class WebLogAspect extends BaseWebLogAspect {
             String userCode = getUserInfoExtends(uri, args);
             //获取sso当前用户
             String userName = "系统调用";
-            if(userCode!=null){
+            if (userCode != null) {
                 operateLog.setOperatorCode(StringUtils.defaultString(userCode));
                 userName = userCode;
             }
             operateLog.setOperateDesc(operateDesc);
-            if(system==null){
+            if (system == null) {
                 operateLog.setSystem(OpLogSystem.WEB.toString());
             }
             operateLog.setOperateIp(ip);
@@ -51,7 +51,7 @@ public class WebLogAspect extends BaseWebLogAspect {
             operateLog.setRequest(args);
             requestTooLong(userName, system, operateDesc, uri, ip, args, operateTime);
             operateLogService.insert(operateLog);
-        }catch (Exception e){
+        } catch (Exception e) {
             LOGGER.error(e.toString());
         }
 
@@ -59,6 +59,7 @@ public class WebLogAspect extends BaseWebLogAspect {
 
     /**
      * 通过自定义的方式获取当前用户
+     *
      * @param uri
      * @param args
      * @return

@@ -2,11 +2,11 @@ package com.sxops.www.linfen.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.sxops.www.linfen.service.BaseService;
-import com.sxops.www.linfen.common.annotation.Ignore;
-import com.sxops.www.linfen.common.annotation.Like;
-import com.sxops.www.linfen.common.model.Pager;
+import com.sxops.www.common.annotation.Ignore;
+import com.sxops.www.common.annotation.Like;
+import com.sxops.www.common.model.Pager;
 import com.sxops.www.linfen.dao.util.MyBaseMapper;
+import com.sxops.www.linfen.service.BaseService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -94,22 +94,23 @@ public class BaseServiceImpl<T, D extends MyBaseMapper<T>> implements BaseServic
     /**
      * <p>Discription: [根据实体类构造example查询条件] </p>
      * Created on: 2017/11/6 13:06
-     * @param obj 实体对象实例
+     *
+     * @param obj     实体对象实例
      * @param example 查询调价对象
      * @return Example.Criteria 查询条件
      * @author [尹归晋]
      */
-    public Example.Criteria buildCriteriaByEntity(Object obj, Example example)  {
+    public Example.Criteria buildCriteriaByEntity(Object obj, Example example) {
         Field[] declaredFields = obj.getClass().getDeclaredFields();
         Example.Criteria criteria = example.createCriteria();
-        if(declaredFields!=null){
-            for (Field item:declaredFields) {
+        if (declaredFields != null) {
+            for (Field item : declaredFields) {
                 boolean isStatic = Modifier.isStatic(item.getModifiers());
-                if(isStatic){
+                if (isStatic) {
                     continue;
                 }
                 Ignore ignore = item.getDeclaredAnnotation(Ignore.class);
-                if(ignore!=null){
+                if (ignore != null) {
                     continue;
                 }
                 String fieldName = item.getName();
@@ -122,19 +123,19 @@ public class BaseServiceImpl<T, D extends MyBaseMapper<T>> implements BaseServic
                 Method method;
                 Object value;
                 try {
-                    method = obj.getClass().getMethod(getter, new Class[] {});
-                    value = method.invoke(obj, new Object[] {});
-                    if(value == null){
+                    method = obj.getClass().getMethod(getter, new Class[]{});
+                    value = method.invoke(obj, new Object[]{});
+                    if (value == null) {
                         continue;
                     }
-                    if(value instanceof String && StringUtils.isEmpty(value.toString())){
+                    if (value instanceof String && StringUtils.isEmpty(value.toString())) {
                         continue;
                     }
                 } catch (Exception e) {
-                   throw new RuntimeException("构造查询条件失败："+e.getMessage());
+                    throw new RuntimeException("构造查询条件失败：" + e.getMessage());
                 }
-                if(like!=null){
-                    criteria.andLike(fieldName, "%"+value.toString()+"%");
+                if (like != null) {
+                    criteria.andLike(fieldName, "%" + value.toString() + "%");
                     continue;
                 }
                 criteria.andEqualTo(fieldName, value);
@@ -146,33 +147,36 @@ public class BaseServiceImpl<T, D extends MyBaseMapper<T>> implements BaseServic
     /**
      * <p>Discription: [在指定字符【前面】加百分号%，适用于like条件] </p>
      * Created on: 2017/11/6 12:11
+     *
      * @param source 源字符
      * @return String 处理完的字符
      * @author [尹归晋]
      */
-    protected String percentPrefix(String source){
-        return "%"+source;
+    protected String percentPrefix(String source) {
+        return "%" + source;
     }
 
     /**
      * <p>Discription: [在指定字符【后面】加百分号%，适用于like条件] </p>
      * Created on: 2017/11/6 12:11
+     *
      * @param source 源字符
      * @return String 处理完的字符
      * @author [尹归晋]
      */
-    protected String percentSuffix(String source){
-        return source+"%";
+    protected String percentSuffix(String source) {
+        return source + "%";
     }
 
     /**
      * <p>Discription: [在指定字符【两面】加百分号%，适用于like条件] </p>
      * Created on: 2017/11/6 12:11
+     *
      * @param source 源字符
      * @return String 处理完的字符
      * @author [尹归晋]
      */
-    protected String percent(String source){
-        return "%"+source+"%";
+    protected String percent(String source) {
+        return "%" + source + "%";
     }
 }

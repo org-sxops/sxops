@@ -11,43 +11,9 @@
     <name>sxops</name>
     <description>壹加柒</description>
 
-    <properties>
-        <!--编译设置-->
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <!--版本设置-->
-        <mybatis.version>1.3.0</mybatis.version>
-        <test.test.version>0.0.1-SNAPSHOT</test.test.version>
-        <quartz.version>2.3.0</quartz.version>
-        <java.version>1.8</java.version>
-        <druid.version>1.1.2</druid.version>
-        <mysql.connector.version>5.1.6</mysql.connector.version>
-        <mybatis.version>1.3.0</mybatis.version>
-        <mapper.springboot.version>1.1.0</mapper.springboot.version>
-        <mapper.version>3.4.0</mapper.version>
-        <pagehelper.version>1.1.1</pagehelper.version>
-        <poi.version>3.15</poi.version>
-        <springfox.version>2.8.0</springfox.version>
-        <io.version>2.4</io.version>
-        <lang3.version>3.4</lang3.version>
-        <httpclient.version>4.5</httpclient.version>
-        <joda.version>2.9.9</joda.version>
-        <fastjson.version>1.2.36</fastjson.version>
-        <guava.version>21.0</guava.version>
-        <zxing.version>3.3.0</zxing.version>
-        <junit.version>4.12</junit.version>
-        <lombok.version>1.16.18</lombok.version>
-    </properties>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>1.5.7.RELEASE</version>
-    </parent>
-
     <modules>
+        <module>sxops-parent</module>
+        <module>sxops-common</module>
         <module>sxops-linfen</module>
     </modules>
 

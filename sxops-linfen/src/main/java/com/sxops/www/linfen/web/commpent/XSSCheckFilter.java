@@ -1,7 +1,7 @@
 package com.sxops.www.linfen.web.commpent;
 
-import com.sxops.www.linfen.common.xss.XSSHttpRequestParamsFirst;
-import com.sxops.www.linfen.common.xss.XSSHttpServletRequest;
+import com.sxops.www.common.xss.XSSHttpRequestParamsFirst;
+import com.sxops.www.common.xss.XSSHttpServletRequest;
 
 import java.io.IOException;
 

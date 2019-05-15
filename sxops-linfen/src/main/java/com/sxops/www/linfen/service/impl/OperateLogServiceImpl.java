@@ -1,12 +1,12 @@
 package com.sxops.www.linfen.service.impl;
 
-import com.sxops.www.linfen.common.model.Pager;
-import com.sxops.www.linfen.common.util.StringUtils;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.sxops.www.common.model.Pager;
+import com.sxops.www.common.util.StringUtils;
 import com.sxops.www.linfen.dao.mapper.OperateLogMapper;
 import com.sxops.www.linfen.dao.model.OperateLog;
 import com.sxops.www.linfen.service.OperateLogService;
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
@@ -28,17 +28,17 @@ public class OperateLogServiceImpl extends BaseServiceImpl<OperateLog, OperateLo
         Example example = new Example(record.getClass());
         Example.Criteria criteria = buildCriteriaByEntity(record, example);
         //时间范围查询
-        if(StringUtils.isNotEmpty(record.getOperateTimeStart())){
-            criteria.andGreaterThanOrEqualTo("operateTime",record.getOperateTimeStart());
+        if (StringUtils.isNotEmpty(record.getOperateTimeStart())) {
+            criteria.andGreaterThanOrEqualTo("operateTime", record.getOperateTimeStart());
         }
-        if(StringUtils.isNotEmpty(record.getOperateTimeEnd())){
-            criteria.andLessThanOrEqualTo("operateTime",record.getOperateTimeEnd());
+        if (StringUtils.isNotEmpty(record.getOperateTimeEnd())) {
+            criteria.andLessThanOrEqualTo("operateTime", record.getOperateTimeEnd());
         }
         example.orderBy("operateTime").desc();
         Page<OperateLog> pageInfo = PageHelper.startPage(pager.getPageNum(), pager.getPageSize());
         List<OperateLog> operateLogList = myBaseMapper.selectByExample(example);
-        for (OperateLog operateLog : operateLogList){
-            operateLog.setOperator(StringUtils.defaultString(operateLog.getOperatorCode())+" "+StringUtils.defaultString(operateLog.getOperatorCode()));
+        for (OperateLog operateLog : operateLogList) {
+            operateLog.setOperator(StringUtils.defaultString(operateLog.getOperatorCode()) + " " + StringUtils.defaultString(operateLog.getOperatorCode()));
         }
         pager.setPageInfo(pageInfo);
         pager.setRecords(operateLogList);

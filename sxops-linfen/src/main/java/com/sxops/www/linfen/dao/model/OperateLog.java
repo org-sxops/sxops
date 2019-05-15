@@ -1,8 +1,8 @@
 package com.sxops.www.linfen.dao.model;
 
 
-import com.sxops.www.linfen.common.annotation.Ignore;
-import com.sxops.www.linfen.common.annotation.Like;
+import com.sxops.www.common.annotation.Ignore;
+import com.sxops.www.common.annotation.Like;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Column;
