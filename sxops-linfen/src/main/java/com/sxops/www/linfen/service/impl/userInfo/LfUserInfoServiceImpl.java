@@ -56,12 +56,12 @@ public class LfUserInfoServiceImpl extends BaseServiceImpl<LfUserInfo, LfUserInf
         if (StringUtils.isEmpty(userInfo.getPassword())) {
             buffer.append("密码为空，");
         }
-        if (StringUtils.isEmpty(userInfo.getSex())) {
-            buffer.append("性别为空，");
+        if (StringUtils.isEmpty(userInfo.getSex()) || userInfo.getSex().length() > 2) {
+            buffer.append("性别为空或数据不正确，");
         }
         if (buffer.length() > 0) {
             log.info("模块:【用户信息】，操作:【入库操作数据校验】,参数：[ userInfo: {}, 是否是更新操作： {}],错误信息：{}", userInfo.toString(), isUpdate, buffer.toString());
-            throw new UserInfoException(APIStatus.ERROR_100000.getCode(),"用户信息中 ：" + buffer.toString() + " 不允许进行入库操作");
+            throw new UserInfoException(APIStatus.ERROR_100000.getCode(),"用户信息中:" + buffer.toString() + "不允许进行入库操作");
         }
     }
 

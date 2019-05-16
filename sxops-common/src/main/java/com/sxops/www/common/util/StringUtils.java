@@ -40,7 +40,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * @author:[刘超]
      */
     public static Boolean isEmpty(String value) {
-        if (value == null || value.length() == 0) {
+        if (null == value || value.length() == 0 || "".equals(value)) {
             return true;
         }
         return false;

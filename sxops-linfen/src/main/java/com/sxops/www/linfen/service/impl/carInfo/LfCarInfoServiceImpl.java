@@ -63,7 +63,7 @@ public class LfCarInfoServiceImpl extends BaseServiceImpl<LfCarInfo, LfCarInfoMa
         }
         if (buffer.length() > 0) {
             log.info("模块:【车辆信息】，操作:【入库操作数据校验】,参数：[ CarInfo: {}, 是否是更新操作： {}],错误信息：{}", CarInfo.toString(), isUpdate, buffer.toString());
-            throw new RuntimeException("车辆信息中 ：" + buffer.toString() + " 不允许进行入库操作");
+            throw new RuntimeException("车辆信息中:" + buffer.toString() + " 不允许进行入库操作");
         }
 
     }
