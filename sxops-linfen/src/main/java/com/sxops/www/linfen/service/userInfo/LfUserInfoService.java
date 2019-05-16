@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LfUserInfoService extends BaseService<LfUserInfo> {
+
     LfUserInfo insertUserInfo(LfUserInfo userInfo);
 
     void checkUserModelIsNotNull(LfUserInfo userInfo, boolean isUpdate);
