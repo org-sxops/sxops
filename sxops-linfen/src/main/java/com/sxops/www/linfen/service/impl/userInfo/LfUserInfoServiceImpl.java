@@ -1,8 +1,10 @@
 package com.sxops.www.linfen.service.impl.userInfo;
 
+import com.sxops.www.basicException.UserInfoException;
+import com.sxops.www.common.enums.APIStatus;
 import com.sxops.www.common.util.StringUtils;
-import com.sxops.www.linfen.dao.mapper.journey.LfUserInfoMapper;
-import com.sxops.www.linfen.dao.model.journey.LfUserInfo;
+import com.sxops.www.linfen.dao.mapper.userInfo.LfUserInfoMapper;
+import com.sxops.www.linfen.dao.model.userInfo.LfUserInfo;
 import com.sxops.www.linfen.service.impl.basic.BaseServiceImpl;
 import com.sxops.www.linfen.service.userInfo.LfUserInfoService;
 import lombok.extern.slf4j.Slf4j;
@@ -37,7 +39,7 @@ public class LfUserInfoServiceImpl extends BaseServiceImpl<LfUserInfo, LfUserInf
     public void checkUserModelIsNotNull(LfUserInfo userInfo, boolean isUpdate) {
         log.info("模块:【用户信息】，操作:【入库操作数据校验】参数：[ userInfo: {}, 是否是更新操作： {}]", userInfo.toString(), isUpdate);
         if (ObjectUtils.isEmpty(userInfo)) {
-            throw new RuntimeException("用户信息为空");
+            throw new UserInfoException(APIStatus.ERROR_100000.getCode(),"用户信息为空");
         }
         StringBuffer buffer = new StringBuffer();
         if (isUpdate) {
@@ -59,9 +61,8 @@ public class LfUserInfoServiceImpl extends BaseServiceImpl<LfUserInfo, LfUserInf
         }
         if (buffer.length() > 0) {
             log.info("模块:【用户信息】，操作:【入库操作数据校验】,参数：[ userInfo: {}, 是否是更新操作： {}],错误信息：{}", userInfo.toString(), isUpdate, buffer.toString());
-            throw new RuntimeException("用户信息中 ：" + buffer.toString() + " 不允许进行入库操作");
+            throw new UserInfoException(APIStatus.ERROR_100000.getCode(),"用户信息中 ：" + buffer.toString() + " 不允许进行入库操作");
         }
-
     }
 
     /**

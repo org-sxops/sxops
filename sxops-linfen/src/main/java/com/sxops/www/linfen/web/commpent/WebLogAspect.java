@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.sxops.www.common.component.BaseWebLogAspect;
 import com.sxops.www.common.enums.OpLogSystem;
 import com.sxops.www.linfen.dao.model.basic.OperateLog;
-import com.sxops.www.linfen.dao.model.journey.LfUserInfo;
+import com.sxops.www.linfen.dao.model.userInfo.LfUserInfo;
 import com.sxops.www.linfen.service.basic.OperateLogService;
 import com.sxops.www.linfen.service.login.LoginService;
 import lombok.extern.slf4j.Slf4j;

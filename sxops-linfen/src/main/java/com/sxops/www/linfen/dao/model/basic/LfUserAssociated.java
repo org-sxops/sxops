@@ -1,4 +1,4 @@
-package com.sxops.www.linfen.dao.model.journey;
+package com.sxops.www.linfen.dao.model.basic;
 
 import lombok.ToString;
 

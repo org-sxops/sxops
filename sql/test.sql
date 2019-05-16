@@ -98,6 +98,7 @@ CREATE TABLE `lf_user_info` (
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `updata_time` datetime NOT NULL COMMENT '更新时间',
   `create_source` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '创建来源系统',
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT '邮箱',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户信息表';
 CREATE TABLE `operate_log` (

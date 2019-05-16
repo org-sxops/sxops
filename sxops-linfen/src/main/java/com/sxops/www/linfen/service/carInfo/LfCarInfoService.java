@@ -1,7 +1,6 @@
 package com.sxops.www.linfen.service.carInfo;
 
-import com.sxops.www.linfen.dao.model.journey.LfCarInfo;
-import com.sxops.www.linfen.dao.model.journey.LfUserInfo;
+import com.sxops.www.linfen.dao.model.carInfo.LfCarInfo;
 import com.sxops.www.linfen.service.basic.BaseService;
 import org.springframework.stereotype.Repository;
 

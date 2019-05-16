@@ -1,7 +1,7 @@
 package com.sxops.www.linfen.service.impl.login;
 
 import com.sxops.www.common.util.CollectionUtils;
-import com.sxops.www.linfen.dao.model.journey.LfUserInfo;
+import com.sxops.www.linfen.dao.model.userInfo.LfUserInfo;
 import com.sxops.www.linfen.service.login.LoginService;
 import com.sxops.www.linfen.service.userInfo.LfUserInfoService;
 import lombok.extern.slf4j.Slf4j;

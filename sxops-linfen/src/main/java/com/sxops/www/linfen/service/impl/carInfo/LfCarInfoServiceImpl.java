@@ -1,9 +1,8 @@
 package com.sxops.www.linfen.service.impl.carInfo;
 
 import com.sxops.www.common.util.StringUtils;
-import com.sxops.www.linfen.dao.mapper.journey.LfCarInfoMapper;
-import com.sxops.www.linfen.dao.model.journey.LfCarInfo;
-import com.sxops.www.linfen.dao.model.journey.LfUserInfo;
+import com.sxops.www.linfen.dao.mapper.carInfo.LfCarInfoMapper;
+import com.sxops.www.linfen.dao.model.carInfo.LfCarInfo;
 import com.sxops.www.linfen.service.carInfo.LfCarInfoService;
 import com.sxops.www.linfen.service.impl.basic.BaseServiceImpl;
 import com.sxops.www.linfen.service.login.LoginService;

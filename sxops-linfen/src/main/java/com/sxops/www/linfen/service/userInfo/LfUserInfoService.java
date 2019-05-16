@@ -1,6 +1,6 @@
 package com.sxops.www.linfen.service.userInfo;
 
-import com.sxops.www.linfen.dao.model.journey.LfUserInfo;
+import com.sxops.www.linfen.dao.model.userInfo.LfUserInfo;
 import com.sxops.www.linfen.service.basic.BaseService;
 import org.springframework.stereotype.Repository;
 
