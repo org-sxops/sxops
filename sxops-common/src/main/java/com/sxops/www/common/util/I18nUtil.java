@@ -11,7 +11,7 @@ import java.util.Locale;
 /**
  * <p>Discription: [国际化配置] </p>
  * Created on: 2017/11/9 10:17
- * @author [尹归晋]
+ * @author [葛伟]
  */
 @Component
 public class I18nUtil {
@@ -23,7 +23,7 @@ public class I18nUtil {
      * Created on: 2017/11/9 10:17
      * @param key
      * @return String 国际化信息
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public String getMessage(String key) {
         return getMessage(key, null);
@@ -56,7 +56,7 @@ public class I18nUtil {
      * @return 当前语言
      *
      * Created on 2017/11/9
-     * @author: 尹归晋
+     * @author: 葛伟
      */
     public String getLanguage(){
         Locale locale = LocaleContextHolder.getLocale();
@@ -67,7 +67,7 @@ public class I18nUtil {
      * <p>Discription: [获取当前语言是否是英文] </p>
      * Created on: 2017/11/20 15:01
      * @return true 英文 false 中文
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public Boolean isEn(){
         Locale locale = LocaleContextHolder.getLocale();

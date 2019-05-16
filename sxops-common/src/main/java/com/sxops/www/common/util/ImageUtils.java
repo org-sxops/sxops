@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  * Created on 2018年1月7日
  *
- * @author <a href="mailto: miaozhihong@sxops.com">缪志红</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 public class ImageUtils {
@@ -22,7 +22,7 @@ public class ImageUtils {
      * <p>Description:[封装下载图片的response]</p>
      * Created on 2018/1/7
      *
-     * @author 缪志红
+     * @author 葛伟
      */
     public static void getResponseHeader(HttpServletResponse response, String encodeName) {
         response.setContentType("application/vnd.ms-excel");

@@ -12,7 +12,7 @@ import java.util.List;
  * <p>Description: [上下移动工具类]</p>
  * Created on 2016年12月9日
  * 
- * @author <a href="mailto: yinguijin@sxops.com">尹归晋</a>
+ * @author <a href="mailto: yinguijin@sxops.com">葛伟</a>
  * @version 1.0
  */
 public class MoveUpAndDownUtils<T> {
@@ -32,7 +32,7 @@ public class MoveUpAndDownUtils<T> {
 	 * Created on 2016年12月9日
 	 * @param dao 要求dao必须实现queryById,queryList,update方法
 	 * @return
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static MoveUpAndDownUtils getInstance(MyBaseMapper dao) {
 		return new MoveUpAndDownUtils(dao);
@@ -44,7 +44,7 @@ public class MoveUpAndDownUtils<T> {
 	 * Created on 2016年12月9日
 	 * @param isUp 是否上移
 	 * @param beanId
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	@SuppressWarnings("unchecked")
 	public void move(boolean isUp, Long beanId) {
@@ -68,7 +68,7 @@ public class MoveUpAndDownUtils<T> {
 	 * <p>Description:[移动]</p>
 	 * Created on 2017年9月13日
 	 * @param isUp
-	 * @author:尹归晋
+	 * @author:葛伟
 	 * @param list
 	 */
 	public List<T> moveSort(boolean isUp, T currentBean, List<T> list) {
@@ -163,7 +163,7 @@ public class MoveUpAndDownUtils<T> {
 	 * @param list
 	 * @param currentBean
 	 * @return
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	private int getCurrentBeanIndex(List<Object> list, Object currentBean) {
 		int index = 0;
@@ -183,7 +183,7 @@ public class MoveUpAndDownUtils<T> {
 	 * @param list
 	 * @param currentBean
 	 * @return
-	 * @author:尹归晋
+	 * @author:葛伟
 	 * @param <T>
 	 */
 	private <T> int getCurrentBeanIndexSort(List<T> list, Object currentBean) {
@@ -203,7 +203,7 @@ public class MoveUpAndDownUtils<T> {
 	 * Created on 2016年12月9日
 	 * @param bean 要求必须有sort字段否则抛异常
 	 * @return
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public int getSort(Object bean) {
 		try {
@@ -223,7 +223,7 @@ public class MoveUpAndDownUtils<T> {
 	 * Created on 2016年12月9日
 	 * @param bean bean 要求必须有sort字段否则抛异常
 	 * @param sort 新的sort值
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public void setSort(Object bean, int sort) {
 		try {

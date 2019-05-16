@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 /**
  * <p>Description: [拦截器适配器]</p>
  * Created on 2017年12月21日
- * @author <a href="mailto:liuxiangping@sxops.com">尹归晋</a>
+ * @author <a href="mailto:liuxiangping@sxops.com">葛伟</a>
  * @version 1.0 Copyright (c) 2017 山西省壹加柒网络技术有限公司 交付部
  */
 @Configuration

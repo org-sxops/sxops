@@ -7,7 +7,7 @@ import com.google.common.base.Strings;
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  * Created on 2017年10月23日
  *
- * @author <a href="mailto: miaozhihong@sxops.com">缪志红</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 public class CheckContainChinese {
@@ -49,7 +49,7 @@ public class CheckContainChinese {
      * @return 随机码
      *
      * Created on 2017/11/9
-     * @author: 尹归晋
+     * @author: 葛伟
      */
     private static int getRandNum(int min, int max) {
         int randNum = min + (int)(Math.random() * ((max - min) + 1));
@@ -61,7 +61,7 @@ public class CheckContainChinese {
      * @return 6-10随机码
      *
      * Created on 2017/11/9
-     * @author: 尹归晋
+     * @author: 葛伟
      */
     public static int randCode(){
         return getRandNum(100000, 999999999);

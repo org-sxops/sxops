@@ -14,7 +14,7 @@ import java.util.Locale;
  * <p> Description: [国际化配置]</p>
  * Created on: 2017/11/9 10:03
  *
- * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 @Configuration

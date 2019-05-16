@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * <p> Description: [构造Example时，此字段为like]</p>
  * Created on: 2017/11/6 12:02
  *
- * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 @Target({ElementType.TYPE, ElementType.FIELD})

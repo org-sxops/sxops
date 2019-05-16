@@ -12,7 +12,7 @@ import java.util.Date;
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  * Created on 2017年11月10日
  *
- * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 @Table(name = "exception_log")
@@ -99,7 +99,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @return Long id
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public Long getId() {
         return id;
@@ -111,7 +111,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @param id id
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setId(Long id) {
         this.id = id;
@@ -123,7 +123,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @return String
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public String getUri() {
         return uri;
@@ -135,7 +135,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @param uri
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setUri(String uri) {
         this.uri = uri;
@@ -147,7 +147,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @return String 操作人id
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public String getOperatorCode() {
         return operatorCode;
@@ -159,7 +159,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @param operatorCode 操作人id
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setOperatorCode(String operatorCode) {
         this.operatorCode = operatorCode;
@@ -171,7 +171,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @return String 操作人
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public String getOperator() {
         return operator;
@@ -183,7 +183,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @param operator 操作人
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setOperator(String operator) {
         this.operator = operator;
@@ -195,7 +195,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @return String 操作人ip
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public String getOperatorIp() {
         return operatorIp;
@@ -207,7 +207,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @param operatorIp 操作人ip
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setOperatorIp(String operatorIp) {
         this.operatorIp = operatorIp;
@@ -219,7 +219,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @return String 错误描述
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public String getDescription() {
         return description;
@@ -231,7 +231,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @param description 错误描述
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setDescription(String description) {
         this.description = description;
@@ -243,7 +243,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @return String 主机
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public String getHostName() {
         return hostName;
@@ -255,7 +255,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @param hostName 主机
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setHostName(String hostName) {
         this.hostName = hostName;
@@ -267,7 +267,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @return String 错误详细
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public String getDetail() {
         return detail;
@@ -279,7 +279,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @param detail 错误详细
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setDetail(String detail) {
         this.detail = detail;
@@ -291,7 +291,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @return String 浏览器信息
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public String getBrowerMessage() {
         return browerMessage;
@@ -303,7 +303,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @param browerMessage 浏览器信息
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setBrowerMessage(String browerMessage) {
         this.browerMessage = browerMessage;
@@ -315,7 +315,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @return Date
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public Date getCreateTime() {
         return createTime;
@@ -327,7 +327,7 @@ public class ExceptionLog {
      * Created on 2017年11月10日
      *
      * @param createTime
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;

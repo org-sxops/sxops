@@ -8,7 +8,7 @@ import java.util.List;
  * Description: [baseService]
  * Created on 2017年11月02日
  *
- * @author <a href="mailto: miaozhihong@sxops.com">缪志红</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  * Copyright (c) 2017年 山西省壹加柒网络技术有限公司
  */
@@ -18,7 +18,7 @@ public interface BaseService<T> {
      * 保存一个实体，null的属性也会保存，不会使用数据库默认值
      *
      * @param record 实体对象
-     * @author 缪志红
+     * @author 葛伟
      */
     void insert(T record);
 
@@ -26,7 +26,7 @@ public interface BaseService<T> {
      * 保存一个实体集合，null的属性也会保存，不会使用数据库默认值
      *
      * @param records 实体对象集合
-     * @author 缪志红
+     * @author 葛伟
      */
     void insertList(List<T> records);
 
@@ -34,7 +34,7 @@ public interface BaseService<T> {
      * 保存一个实体，null的属性不会保存，会使用数据库默认值
      *
      * @param record 实体对象
-     * @author 缪志红
+     * @author 葛伟
      */
     void insertSelective(T record);
 
@@ -42,7 +42,7 @@ public interface BaseService<T> {
      * 根据主键更新实体全部字段，null值会被更新
      *
      * @param record 实体对象
-     * @author 缪志红
+     * @author 葛伟
      */
     void updateByPrimaryKey(T record);
 
@@ -50,7 +50,7 @@ public interface BaseService<T> {
      * 根据主键更新属性不为null的值
      *
      * @param record 实体对象
-     * @author 缪志红
+     * @author 葛伟
      */
     void updateByPrimaryKeySelective(T record);
 
@@ -58,7 +58,7 @@ public interface BaseService<T> {
      * 主键条件进行逻辑删除(因代码生成规则问题，本方法未实现，需要自己通过修改方法实现)
      *
      * @param key 主键
-     * @author 缪志红
+     * @author 葛伟
      */
     void deleteLogic(Object key);
 
@@ -66,7 +66,7 @@ public interface BaseService<T> {
      * 根据主键条件进行物理删除
      *
      * @param key 主键
-     * @author 缪志红
+     * @author 葛伟
      */
     void deletePhysics(Object key);
 
@@ -75,7 +75,7 @@ public interface BaseService<T> {
      *
      * @param record 实体对象
      * @return 影响记录数
-     * @author 缪志红
+     * @author 葛伟
      */
     List<T> select(T record);
 
@@ -83,7 +83,7 @@ public interface BaseService<T> {
      * 查询全部结果
      *
      * @return 影响记录数
-     * @author 缪志红
+     * @author 葛伟
      */
     List<T> selectAll();
 
@@ -92,7 +92,7 @@ public interface BaseService<T> {
      *
      * @param key 主键
      * @return 影响记录数
-     * @author 缪志红
+     * @author 葛伟
      */
     T selectByPrimaryKey(Object key);
 
@@ -102,7 +102,7 @@ public interface BaseService<T> {
      * @param pager  分页对象
      * @param record 查询条件对象
      * @return 分页记录
-     * @author 缪志红
+     * @author 葛伟
      */
     Pager<T> selectPage(Pager<T> pager, T record);
 

@@ -52,7 +52,7 @@
 //     * Created on: 2017/5/17 14:08
 //     *
 //     * @param
-//     * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+//     * @author <a href="mailto: gewei@sxops.com">葛伟</a>
 //     */
 //
 //    private static void generateCode() {
@@ -68,7 +68,7 @@
 //        gc.setBaseColumnList(false);// XML columList
 //        gc.setTableAndFieldAnnotations(true);
 //        gc.setCustomAnnotations(true);
-//        gc.setAuthor("尹归晋");
+//        gc.setAuthor("葛伟");
 //
 //        // 自定义文件命名，注意 %s 会自动填充表实体属性！
 //        gc.setMapperName("%sMapper");
@@ -113,7 +113,7 @@
 //            @Override
 //            public void initMap() {
 //                Map<String, Object> map = new HashMap<String, Object>();
-//                map.put("email", "liruifeng@sxops.com");
+//                map.put("email", "gewei@sxops.com");
 //                //配置生成范围查询
 //                map.put("rangeDateFileds", rangeDateFileds);
 //                map.put("notAppendApostropheTypes", notAppendApostropheTypes);

@@ -16,7 +16,7 @@ import java.util.List;
  * <p> Description: [操作日志服务实现类]</p>
  * Created on: 2017/11/10 15:32
  *
- * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 @Service

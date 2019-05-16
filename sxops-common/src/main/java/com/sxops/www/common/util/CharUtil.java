@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 /**
  * <p>Description: [字符工具类]</p>
  * Created on 2018年1月6日
- * @author  <a href="mailto:liuxiangping@sxops.com">尹归晋</a>
+ * @author  <a href="mailto:liuxiangping@sxops.com">葛伟</a>
  * @version 1.0 
  * Copyright (c) 2018 山西省壹加柒网络技术有限公司 交付部
  */
@@ -31,7 +31,7 @@ public class CharUtil {
      * Created on 2018年1月6日
      * @param c
      * @return
-     * @author:[尹归晋]
+     * @author:[葛伟]
      */
     public static boolean isChinese(char c) {
         Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
@@ -49,7 +49,7 @@ public class CharUtil {
      * Created on 2018年1月6日
      * @param strName
      * @return
-     * @author:[尹归晋]
+     * @author:[葛伟]
      */
     public static boolean isChinese(String strName) {
         char[] ch = strName.toCharArray();
@@ -67,7 +67,7 @@ public class CharUtil {
      * Created on 2018年1月6日
      * @param str
      * @return
-     * @author:[尹归晋]
+     * @author:[葛伟]
      */
     public static boolean isChineseByREG(String str) {
         if (str == null) {
@@ -82,7 +82,7 @@ public class CharUtil {
      * Created on 2018年1月6日
      * @param str
      * @return
-     * @author:[尹归晋]
+     * @author:[葛伟]
      */
     public static boolean isChineseByName(String str) {
         if (str == null) {

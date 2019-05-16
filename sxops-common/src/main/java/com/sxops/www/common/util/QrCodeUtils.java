@@ -18,7 +18,7 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  * Created on 2017年11月10日
  *
- * @author <a href="mailto: miaozhihong@sxops.com">缪志红</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 public class QrCodeUtils {
@@ -44,7 +44,7 @@ public class QrCodeUtils {
      *
      * @param content 二维码内容
      * @return byte[] 输出流
-     * @author 缪志红
+     * @author 葛伟
      */
     public static byte[] createImage(String content) throws Exception {
         Hashtable<EncodeHintType, Object> hints = new Hashtable<>();
@@ -72,7 +72,7 @@ public class QrCodeUtils {
      * @param qrCodeSize 二维码尺寸（正方形）
      * @return BufferedImage 图片
      * @throws Exception
-     * @author:[尹归晋]
+     * @author:[葛伟]
      */
     public static BufferedImage createImage(String content, int qrCodeSize) throws Exception {
     	/*Hashtable<EncodeHintType, Object> hints = new Hashtable<>();

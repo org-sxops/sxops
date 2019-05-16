@@ -10,7 +10,7 @@ import java.util.Arrays;
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  * Created on 2017年10月18日
  *
- * @author <a href="mailto: miaozhihong@sxops.com">缪志红</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 @Component
@@ -22,7 +22,7 @@ public class FileSuffixUtils {
     /**
      * <p>Description:[验证后缀名是否支持]</p>
      * Created on 2017年10月18日
-     * @author 缪志红
+     * @author 葛伟
      */
     public boolean isPermit(String fileName) {
         String prefixName = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase().trim();

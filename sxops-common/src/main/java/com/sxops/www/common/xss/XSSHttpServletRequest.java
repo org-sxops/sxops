@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
 /** 
  * <p>Description: [xss脚本过滤]</p>
  * Created on 2017年11月21日
- * @author  <a href="mailto: yinguijin@sxops.com">尹归晋</a>
+ * @author  <a href="mailto: yinguijin@sxops.com">葛伟</a>
  * @version 1.0 
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  */ 

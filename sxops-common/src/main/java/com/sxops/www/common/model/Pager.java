@@ -8,7 +8,7 @@ import java.util.List;
  * <p> Description: [分页扩展，可存放分页的数据]</p>
  * Created on: 2017/11/1 17:43
  *
- * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 public class Pager<T>  {
@@ -57,7 +57,7 @@ public class Pager<T>  {
      * <p>Discription: [设置分页信息] </p>
      * Created on: 2017/11/2 13:05
      * @param pageInfo 分页插件返回的分页信息
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public void setPageInfo(Page pageInfo){
         this.total = pageInfo.getTotal();

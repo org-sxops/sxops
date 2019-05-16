@@ -17,7 +17,7 @@ import org.apache.commons.codec.binary.Base64;
  * <p>Discription: [安全处理] </p>
  * Created on: 2017/11/2 18:54
  *
- * @author [尹归晋]
+ * @author [葛伟]
  */
 public class SecurityUtils {
 
@@ -29,7 +29,7 @@ public class SecurityUtils {
      * Created on: 2017/11/2 19:13
      * @param content 需要计算摘要的字符串
      * @return 摘要
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public static String md5(String content) {
         byte[] md5Bytes = DigestUtils.md5(content);
@@ -41,7 +41,7 @@ public class SecurityUtils {
      * Created on: 2017/11/2 19:13
      * @param content 需要计算摘要的字符串
      * @return 摘要
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public static String sha256(String content) {
         byte[] md5Bytes = DigestUtils.sha256(content);
@@ -54,7 +54,7 @@ public class SecurityUtils {
      *
      * @param content 需要加密的字符串
      * @return String 加密后的字符串
-     * @author 缪志红
+     * @author 葛伟
      */
     public static String aesEncrypt(String content) throws Exception {
         return aesEncrypt(content, AES_KEY);
@@ -66,7 +66,7 @@ public class SecurityUtils {
      * @param content   待加密的内容
      * @param key 秘钥字符串
      * @return String 加密后的内容
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public static String aesEncrypt(String content, String key) throws Exception {
         Cipher cipher = Cipher.getInstance(AES);
@@ -82,7 +82,7 @@ public class SecurityUtils {
      *
      * @param content 加密的串
      * @return String 解密后的字符串
-     * @author 缪志红
+     * @author 葛伟
      */
     public static String aesDecrypt(String content) throws Exception {
         return aesDecrypt(content, AES_KEY);
@@ -94,7 +94,7 @@ public class SecurityUtils {
      * @param content   待解密的内容
      * @param key 秘钥字符串
      * @return String 解密后的内容
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public static String aesDecrypt(String content, String key) throws Exception {
         Cipher cipher = Cipher.getInstance(AES);
@@ -108,7 +108,7 @@ public class SecurityUtils {
      * Created on: 2017/11/2 19:48
      * @param key 秘钥字符串
      * @return SecretKeySpec 秘钥
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     private static SecretKeySpec getSecretKey(String key) throws NoSuchAlgorithmException {
         //返回生成指定算法密钥生成器的 KeyGenerator 对象

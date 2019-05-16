@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
  * <p>Description: [ajax返回前台信息vo]</p>
  * Created on 2016年3月31日
  * Copyright (c) 2016 山西省壹加柒网络技术有限公司 交付部
- * @author <a href="mailto: liuchao@sxops.com">刘超</a>
+ * @author <a href="mailto: liuchao@sxops.com">葛伟</a>
  * @version 1.0
  */
 public class AjaxInfo<T> {
@@ -87,7 +87,7 @@ public class AjaxInfo<T> {
      * <p>Discription:[判断是否返回成功]</p>
      * Created on 2017年10月20日
      * @return Boolean
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public Boolean isSuccess() {
         if (this.getCode().equals(CODE_SUCCESS)) {
@@ -100,7 +100,7 @@ public class AjaxInfo<T> {
      * <p>Discription: [产生操作成功的AJAX的返回值] </p>
      * Created on: 2017/5/23 17:04
      * @return AjaxInfo 包含【code】为：200
-     * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+     * @author <a href="mailto: gewei@sxops.com">葛伟</a>
      */
     public static AjaxInfo renderSuccess() {
         AjaxInfo ajaxInfo = new AjaxInfo();
@@ -112,7 +112,7 @@ public class AjaxInfo<T> {
      * <p>Discription: [产生操作成功的AJAX的返回值] </p>
      * Created on: 2017/5/23 17:04
      * @return AjaxInfo 包含【code】为：200
-     * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+     * @author <a href="mailto: gewei@sxops.com">葛伟</a>
      */
     public static AjaxInfo renderSuccess(String msg) {
         AjaxInfo ajaxInfo = new AjaxInfo();
@@ -140,7 +140,7 @@ public class AjaxInfo<T> {
      * Created on: 2017/11/2 15:20
      * @param msg 错误信息
      * @return code 错误码
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public static AjaxInfo renderError(Integer code,String msg){
         setHttpStatus(CODE_SERVER_ERROR);
@@ -155,7 +155,7 @@ public class AjaxInfo<T> {
      * Created on: 2017/11/2 15:20
      * @param msg 提示信息
      * @return code 提示码
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public static AjaxInfo renderWarn(Integer code,String msg){
         AjaxInfo ajaxInfo = new AjaxInfo();
@@ -169,7 +169,7 @@ public class AjaxInfo<T> {
      * Created on: 2017/11/2 15:20
      * @param msg 提示信息
      * @return code 提示码
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public static AjaxInfo renderWarn(Integer code,String msg,Object object){
         AjaxInfo ajaxInfo = new AjaxInfo();
@@ -182,7 +182,7 @@ public class AjaxInfo<T> {
      * <p>Discription: [获取一个错误] </p>
      * Created on: 2017/11/2 15:20
      * @return code 错误码
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public static AjaxInfo renderError(Integer code){
         setHttpStatus(CODE_SERVER_ERROR);
@@ -196,7 +196,7 @@ public class AjaxInfo<T> {
      * Created on: 2017/11/20
      * @param object 错误信息
      * @return code 错误码
-     * @author [缪志红]
+     * @author [葛伟]
      */
     public static AjaxInfo renderError(Integer code, Object object){
         setHttpStatus(CODE_SERVER_ERROR);
@@ -210,7 +210,7 @@ public class AjaxInfo<T> {
      * <p>Discription: [默认设置一个错误错误码为500，提示信息为系统繁忙] </p>
      * Created on: 2017/11/2 15:20
      * @return code 错误码500  提示信息为系统繁忙
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public static AjaxInfo renderError(){
         setHttpStatus(CODE_SERVER_ERROR);
@@ -224,7 +224,7 @@ public class AjaxInfo<T> {
      * <p>Description: [默认设置一个错误错误码为500，提示信息为系统繁忙，输出异常信息] </p>
      * Created on: 2018/2/6
      * @return code 错误码500  提示信息为系统繁忙
-     * @author [缪志红]
+     * @author [葛伟]
      */
     public static AjaxInfo renderErrorData(Exception e){
         setHttpStatus(CODE_SERVER_ERROR);
@@ -244,7 +244,7 @@ public class AjaxInfo<T> {
      * <p>Description: [返回参数错误提示信息] </p>
      * Created on: 2017/12/08
      * @return code 错误码400  提示信息为参数错误
-     * @author [缪志红]
+     * @author [葛伟]
      */
     public static AjaxInfo renderParamError(){
         setHttpStatus(CODE_SERVER_ERROR);
@@ -258,7 +258,7 @@ public class AjaxInfo<T> {
      * <p>Description: [返回权限不足提示信息] </p>
      * Created on: 2017/12/26
      * @return code 错误码401  提示信息为权限不足
-     * @author [缪志红]
+     * @author [葛伟]
      */
     public static AjaxInfo renderUnauthorzied(){
         AjaxInfo ajaxInfo = new AjaxInfo();

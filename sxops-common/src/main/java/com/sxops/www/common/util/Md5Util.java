@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  * <p>Description: [md5工具类]</p>
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  * Created on 2017年8月22日
- * @author  <a href="mailto: liuchao@sxops.com">刘超</a>
+ * @author  <a href="mailto: liuchao@sxops.com">葛伟</a>
  * @version 1.0 
  */ 
 public class Md5Util {
@@ -26,7 +26,7 @@ public class Md5Util {
 	 * Created on 2017年8月22日
 	 * @param val 字符串
 	 * @return 数据经过加密后生成的字符串
-	 * @author:[刘超]
+	 * @author:[葛伟]
 	 */
 	public final static String strToMd5(String val) { 
 		// 使用平台的默认字符集将此 String 编码为 byte序列，并将结果存储到一个新的 byte数组中
@@ -39,7 +39,7 @@ public class Md5Util {
 	 * Created on 2017年8月22日
 	 * @param bytes byte数组
 	 * @return String 数据经过加密后生成的字符串
-	 * @author:[刘超]
+	 * @author:[葛伟]
 	 */
 	public final static String md5(byte[] bytes){
 		try {

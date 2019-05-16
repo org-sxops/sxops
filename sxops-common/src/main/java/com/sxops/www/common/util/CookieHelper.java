@@ -11,7 +11,7 @@ import java.util.Date;
 /** 
  * <p>Description: [描述该类概要功能介绍]</p>
  * Created on 2015年3月5日
- * @author  <a href="mailto: liruifeng@sxops.com">Goma 尹归晋</a>
+ * @author  <a href="mailto: gewei@sxops.com">Goma 葛伟</a>
  * @version 1.0 
  * Copyright (c) 2015 山西省壹加柒网络技术有限公司 交付部
  */
@@ -29,7 +29,7 @@ public class CookieHelper {
 	 * @param response
 	 * @param name
 	 * @param value
-	 * @author:[Goma 尹归晋]
+	 * @author:[Goma 葛伟]
 	 */
 	public static void setCookie(HttpServletResponse response, String name, String value) throws UnsupportedEncodingException {
 		setCookie(response, name, value, COOKIE_MAX_AGE);
@@ -55,7 +55,7 @@ public class CookieHelper {
 	 * @param response
 	 * @param name
 	 * @param value
-	 * @author:[Goma 尹归晋]
+	 * @author:[Goma 葛伟]
 	 */
 	public static void setDialogCookie(HttpServletResponse response, String name, String value) throws UnsupportedEncodingException {
 		if (value == null){
@@ -75,7 +75,7 @@ public class CookieHelper {
 	 * @param name
 	 * @param value
 	 * @param maxAge
-	 * @author:[Goma 尹归晋]
+	 * @author:[Goma 葛伟]
 	 */
 	@SuppressWarnings("deprecation")
 	public static void setCookie(HttpServletResponse response, String name, String value, int maxAge) throws UnsupportedEncodingException {
@@ -99,7 +99,7 @@ public class CookieHelper {
 	 * @param request
 	 * @param name
 	 * @return
-	 * @author:[Goma 尹归晋]
+	 * @author:[Goma 葛伟]
 	 */
 	public static Cookie getCookie(HttpServletRequest request, String name){
 		Cookie[] cookies = request.getCookies();
@@ -121,7 +121,7 @@ public class CookieHelper {
 	 * @param request
 	 * @param name
 	 * @return
-	 * @author:[Goma 尹归晋]
+	 * @author:[Goma 葛伟]
 	 */
 	@SuppressWarnings("deprecation")
 	public static String getCookieVal(HttpServletRequest request, String name) throws UnsupportedEncodingException {
@@ -136,7 +136,7 @@ public class CookieHelper {
 	 * @param request
 	 * @param response
 	 * @param name
-	 * @author:[Goma 尹归晋]
+	 * @author:[Goma 葛伟]
 	 */
 	public static void delCookie(HttpServletRequest request, HttpServletResponse response, String name){
 		Cookie cookie = getCookie(request, name);

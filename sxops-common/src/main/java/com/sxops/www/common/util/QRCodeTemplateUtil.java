@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 /**
  * <p>Description: [根据模版生产二维码]</p>
  * Created on 2018年1月5日
- * @author  <a href="mailto:liuxiangping@sxops.com">尹归晋</a>
+ * @author  <a href="mailto:liuxiangping@sxops.com">葛伟</a>
  * @version 1.0 
  * Copyright (c) 2018 山西省壹加柒网络技术有限公司 交付部
  */
@@ -104,7 +104,7 @@ public class QRCodeTemplateUtil {
 	 * @param oneTemplateUrl 模版一图片URL
 	 * @return
 	 * @throws Exception
-	 * @author:[尹归晋]
+	 * @author:[葛伟]
 	 */
 	public BufferedImage oneQRCodeTemplate(String name, String url, String oneTemplateUrl) throws Exception {
 		
@@ -167,7 +167,7 @@ public class QRCodeTemplateUtil {
 	 * @param twoTemplateUrl 模版二图片URL
 	 * @return
 	 * @throws Exception
-	 * @author:[尹归晋]
+	 * @author:[葛伟]
 	 */
 	public BufferedImage twoQRCodeTemplate(String name, String url, String twoTemplateUrl) throws Exception {
 		
@@ -233,7 +233,7 @@ public class QRCodeTemplateUtil {
 	 * <p>Description:[获取图片]</p>
 	 * Created on 2018/1/7
 	 *
-	 * @author 缪志红
+	 * @author 葛伟
 	 */
 	private static BufferedImage getBufferedImage(String qrCodeUrl) throws Exception {
 		//new一个URL对象
@@ -255,7 +255,7 @@ public class QRCodeTemplateUtil {
 	 * <p>Description:[根据io流获取byte]</p>
 	 * Created on 2018/1/7
 	 *
-	 * @author 缪志红
+	 * @author 葛伟
 	 */
 	private static byte[] readInputStream(InputStream inStream) throws Exception{
 		ByteArrayOutputStream outStream = new ByteArrayOutputStream();

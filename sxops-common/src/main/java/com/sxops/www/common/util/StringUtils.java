@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  * Created on 2017年8月3日
  *
- * @author <a href="mailto: liuchao@sxops.com">刘超</a>
+ * @author <a href="mailto: liuchao@sxops.com">葛伟</a>
  * @version 1.0
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
@@ -22,7 +22,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param value 字符串
      * @return Boolean 判断结果
-     * @author:[刘超]
+     * @author:[葛伟]
      */
     public static Boolean isNotEmpty(String value) {
         if (value == null || value.length() == 0) {
@@ -37,7 +37,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param value 字符串
      * @return Boolean 判断结果
-     * @author:[刘超]
+     * @author:[葛伟]
      */
     public static Boolean isEmpty(String value) {
         if (null == value || value.length() == 0 || "".equals(value)) {
@@ -52,7 +52,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param obj 任意类型
      * @return Boolean 判断结果
-     * @author:[刘超]
+     * @author:[葛伟]
      */
     public static Boolean isEmpty(Object obj) {
         if (null == obj) {
@@ -82,7 +82,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * Created on: 2017/11/9 19:56
      *
      * @param str 为null的字符串
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public static String replaceNullToEmpty(String str) {
         if (str == null) {
@@ -97,7 +97,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param str 字符串
      * @return Integer Integer值
-     * @author 缪志红
+     * @author 葛伟
      */
     public static Integer getIntValue(String str) {
         if (org.apache.commons.lang3.StringUtils.isBlank(str)) {
@@ -115,7 +115,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param str 字符串
      * @return Double Double值
-     * @author 缪志红
+     * @author 葛伟
      */
     public static Double getDoubleValue(String str) {
         if (org.apache.commons.lang3.StringUtils.isBlank(str)) {
@@ -133,7 +133,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param str 字符串
      * @return BigDecimal BigDecimal值
-     * @author 缪志红
+     * @author 葛伟
      */
     public static BigDecimal getBigDecimalValue(String str) {
         if (org.apache.commons.lang3.StringUtils.isBlank(str)) {
@@ -151,7 +151,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param str 字符串
      * @return boolean 是否是整数
-     * @author 缪志红
+     * @author 葛伟
      */
     public static boolean isNumeric(String str) {
         for (int i = 0; i < str.length(); i++) {
@@ -168,7 +168,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param str 字符串
      * @return boolean 是否是数字类型
-     * @author 缪志红
+     * @author 葛伟
      */
     public static boolean isNumber(String str) {
         String reg = "^[0-9]+(.[0-9]+)?$";
@@ -181,7 +181,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param strings 字符串数组
      * @return int[] int类型数组
-     * @author 缪志红
+     * @author 葛伟
      */
     public static int[] StringArrayToIntArray(String[] strings) {
         try {
@@ -211,7 +211,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param strings 字符串数组
      * @return int[] int类型数组
-     * @author 缪志红
+     * @author 葛伟
      */
     public static Long[] StringArrayToLongArray(String[] strings) {
         if (null == strings || strings.length == 0) {
@@ -232,7 +232,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param stringList 字符串数组
      * @return List<Integer> Integer类型List
-     * @author 缪志红
+     * @author 葛伟
      */
     public static List<Integer> StringListToIntegerList(List<String> stringList) {
         if (null == stringList || stringList.size() == 0) {
@@ -251,7 +251,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param stringList 字符串数组
      * @return List<Long> Long类型List
-     * @author 缪志红
+     * @author 葛伟
      */
     public static List<Long> stringListToLongList(List<String> stringList) {
         if (null == stringList || stringList.size() == 0) {
@@ -273,7 +273,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param origString 原始字符串
      * @return 转换后的字符串
-     * @author 缪志红
+     * @author 葛伟
      */
     public static String getLowerString(String origString) {
         if (StringUtils.isBlank(origString)) {
@@ -288,7 +288,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param origString 原始字符串
      * @return 转换后的字符串
-     * @author 缪志红
+     * @author 葛伟
      */
     public static String getUpperString(String origString) {
         if (StringUtils.isBlank(origString)) {
@@ -301,7 +301,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * <p>Description:[判断字符串是否只包含数字和字母]</p>
      * Created on 2018/3/7
      *
-     * @author 缪志红
+     * @author 葛伟
      */
     public static boolean containLetterAndNumber(String string) {
         return string.matches("[0-9A-Za-z]*");
@@ -311,7 +311,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * <p>Description:[判断字符串是否只包含数字和横杠（电话号校验）]</p>
      * Created on 2018/3/7
      *
-     * @author 缪志红
+     * @author 葛伟
      */
     public static boolean isPhone(String string) {
         return string.matches("[0-9-]*");
@@ -321,7 +321,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * <p>Description:[过滤表情符号]</p>
      * Created on 2018/3/15
      *
-     * @author 缪志红
+     * @author 葛伟
      */
     public static String filterEmoji(String string) {
         if(StringUtils.isEmpty(string)){
@@ -341,7 +341,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	 * Created on 2018年5月4日
 	 * @param imgUrl
 	 * @return
-	 * @author:[尹归晋]
+	 * @author:[葛伟]
 	 */
     public static String getFileUrlName(String imgUrl) {
 		if (imgUrl == null) {

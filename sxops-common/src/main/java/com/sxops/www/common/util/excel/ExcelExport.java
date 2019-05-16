@@ -17,7 +17,7 @@ import org.apache.poi.ss.util.CellRangeAddress;
 /** 
  * <p>Description: []</p>
  * Created on 2016年11月3日
- * @author  <a href="mailto: liuchao@sxops.com">刘超</a>
+ * @author  <a href="mailto: liuchao@sxops.com">葛伟</a>
  * @version 1.0 
  * Copyright (c) 2016 山西省壹加柒网络技术有限公司 交付部
  */ 
@@ -234,7 +234,7 @@ public class ExcelExport {
 	 * @param colStartNum  列开始
 	 * @param colEndNum    列结束
 	 * @return boolean 返回值
-	 * @author:[刘超]
+	 * @author:[葛伟]
 	 */
 	public boolean merge(int rowStartNum,int rowEndNum,int colStartNum,int colEndNum){
 		msheet.addMergedRegion(new CellRangeAddress(rowStartNum,rowEndNum,colStartNum,colEndNum)) ;

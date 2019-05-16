@@ -22,7 +22,7 @@ import java.util.List;
  * Description: [baseService]
  * Created on 2017年11月02日
  *
- * @author <a href="mailto: miaozhihong@sxops.com">缪志红</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  * Copyright (c) 2017年 山西省壹加柒网络技术有限公司
  */
@@ -98,7 +98,7 @@ public class BaseServiceImpl<T, D extends MyBaseMapper<T>> implements BaseServic
      * @param obj     实体对象实例
      * @param example 查询调价对象
      * @return Example.Criteria 查询条件
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     public Example.Criteria buildCriteriaByEntity(Object obj, Example example) {
         Field[] declaredFields = obj.getClass().getDeclaredFields();
@@ -150,7 +150,7 @@ public class BaseServiceImpl<T, D extends MyBaseMapper<T>> implements BaseServic
      *
      * @param source 源字符
      * @return String 处理完的字符
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     protected String percentPrefix(String source) {
         return "%" + source;
@@ -162,7 +162,7 @@ public class BaseServiceImpl<T, D extends MyBaseMapper<T>> implements BaseServic
      *
      * @param source 源字符
      * @return String 处理完的字符
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     protected String percentSuffix(String source) {
         return source + "%";
@@ -174,7 +174,7 @@ public class BaseServiceImpl<T, D extends MyBaseMapper<T>> implements BaseServic
      *
      * @param source 源字符
      * @return String 处理完的字符
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     protected String percent(String source) {
         return "%" + source + "%";

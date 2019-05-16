@@ -22,7 +22,7 @@ import java.util.Date;
  * <p> Description: [用户操作日志]</p>
  * Created on: 2017/11/1 17:10
  *
- * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 @Aspect

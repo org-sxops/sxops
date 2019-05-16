@@ -13,7 +13,7 @@ import java.util.Date;
   
 /** 
  * @description 自定义返回JSON 数据格中日期格式化处理 
- * @author aokunsang 
+ * @author gewei
  * @date 2013-5-28 
  */  
 public class CustomDateSerializer extends JsonSerializer<Date> {

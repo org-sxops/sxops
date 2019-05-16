@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * <p> Description: [记录系统日志]</p>
  * Created on: 2017/10/31 16:14
- * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 
@@ -81,7 +81,7 @@ public class BaseWebLogAspect {
      * Created on: 2017/11/1 15:07
      * @param joinPoint
      * @return String 中文说明
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     protected  static String getMethodDesc(JoinPoint joinPoint)  throws Exception {
         String description = "";
@@ -100,7 +100,7 @@ public class BaseWebLogAspect {
      * @param ip 操作人ip
      * @param args 请求参数
      * @param operateTime 操作时间
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     protected void saveLog(String system, String operateDesc, String uri, String ip, String args,Date operateTime){
         LOGGER.info("操作描述方法：{}，uri：{}，用户ip：{}，请求：{}，操作时间：{}",operateDesc,uri,ip,args,operateTime.toString());
@@ -111,7 +111,7 @@ public class BaseWebLogAspect {
      * Created on: 2017/11/1 15:07
      * @param joinPoint
      * @return String 中文说明
-     * @author [尹归晋]
+     * @author [葛伟]
      */
     protected  static String getOperateDesc(JoinPoint joinPoint)  throws Exception {
         String targetName = joinPoint.getTarget().getClass().getName();

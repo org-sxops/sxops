@@ -14,7 +14,7 @@ import java.util.List;
  *    |--头文件作为一种包含功能函数、数据接口声明的载体文件，用于保存程序的声明(declaration),而定义文件用于保存程序的实现(implementation)。
  *    |--为了解决在用户上传文件的时候在服务器端判断文件类型的问题，故用获取文件头的方式，直接读取文件的前几个字节，来判断上传文件是否符合格式。
  * Created on: 2017/11/15 10:02
- * @author [尹归晋]
+ * @author [葛伟]
  */
 public class FileTypeUtil {
 
@@ -25,7 +25,7 @@ public class FileTypeUtil {
 	 * Created on: 2017/11/15 10:37
 	 * @param fileName 文件名
 	 * @return Boolean true 是 false否
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */
 	public static Boolean isExcel(String fileName) throws IOException {
 		String extension = FilenameUtils.getExtension(fileName);
@@ -38,7 +38,7 @@ public class FileTypeUtil {
 	 * @param targetExtnsion 指定格式
 	 * @param extension 文件拓展名
 	 * @return
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */
 	private static Boolean contain(String[] targetExtnsion, String extension){
 		for (String item : targetExtnsion) {
@@ -54,7 +54,7 @@ public class FileTypeUtil {
 	 * Created on 2017年11月13日
 	 *
 	 * @param fileName 文件名
-	 * @author 缪志红
+	 * @author 葛伟
 	 */
 	public static boolean isZip(String fileName) {
 		if (org.apache.commons.lang3.StringUtils.isBlank(fileName)) {
@@ -72,7 +72,7 @@ public class FileTypeUtil {
 	 * Created on 2017年11月13日
 	 *
 	 * @param file 附件
-	 * @author 缪志红
+	 * @author 葛伟
 	 */
 	public static boolean isImg(MultipartFile file) throws IOException {
 		if (StringUtils.isBlank(file.getOriginalFilename())) {

@@ -266,7 +266,7 @@ public class CollectionUtils {
      *
      * @param collection 集合
      * @return 空或size==0 返回false
-     * @author 尹归晋
+     * @author 葛伟
      */
     public static boolean isNotEmpty(Collection collection) {
         if (collection == null || collection.size() < 1) {
@@ -282,7 +282,7 @@ public class CollectionUtils {
      *
      * @param collection 集合
      * @return 空或size==0 返回true
-     * @author 尹归晋
+     * @author 葛伟
      */
     public static boolean isEmpty(Collection collection) {
         return !isNotEmpty(collection);
@@ -295,7 +295,7 @@ public class CollectionUtils {
      * @param target 目标字段
      * @param str 比较字符串
      * @return true:存在；false：不存在
-     * @author:[尹归晋]
+     * @author:[葛伟]
      */
     public static <T> Collection<T> checkList(List<T> list, final String target, final String str) {
     	Predicate<T> predicate = new Predicate<T>() {
@@ -332,7 +332,7 @@ public class CollectionUtils {
      * @param target 目标字段
      * @param str 比较字符串
      * @return boolean false：没有匹配对象，true：有匹配的对象
-     * @author:[尹归晋]
+     * @author:[葛伟]
      */
     public static <T> boolean isListExist(List<T> list, final String target, final String str) {
     		Collection<T> filterResult = checkList(list, target, str);
@@ -350,7 +350,7 @@ public class CollectionUtils {
      * @param target 目标字段
      * @param str 比较字符串
      * @return 返回没有匹配的目标字段
-     * @author:[尹归晋]
+     * @author:[葛伟]
      */
     public static <T> List<String> listExist(List<T> list, final String target, final List<String> strList) {
     	if(isEmpty(strList)){
@@ -372,7 +372,7 @@ public class CollectionUtils {
      *
      * @param array 数组
      * @return null或length==0 返回false
-     * @author 尹归晋
+     * @author 葛伟
      */
     public static <T> boolean isNotEmptyArray(T[] array) {
         if (array == null || array.length < 1) {
@@ -388,7 +388,7 @@ public class CollectionUtils {
      *
      * @param array 数组
      * @return null或length==0 返回true
-     * @author 尹归晋
+     * @author 葛伟
      */
     public static <T> boolean isEmptyArray(T[] array) {
         return !isNotEmptyArray(array);
@@ -399,7 +399,7 @@ public class CollectionUtils {
      * Created on 2017年12月20日
      * @param list 需要去重的List集合
      * @return 返回去重后的新集合
-     * @author:[尹归晋]
+     * @author:[葛伟]
      */
     public static <T> List<T> duplicateRemoval(List<T> list) {
     	Set<T> codeSet = new HashSet<>(list);
@@ -412,7 +412,7 @@ public class CollectionUtils {
      * Created on 2017年12月20日
      * @param list 需要去重的List集合
      * @return 返回去重并排序后的新集合
-     * @author:[尹归晋]
+     * @author:[葛伟]
      */
     public static <T> List<T> duplicateRemoval4Sort(List<T> list) {
     	Set<T> codeSet = new TreeSet<>(list);

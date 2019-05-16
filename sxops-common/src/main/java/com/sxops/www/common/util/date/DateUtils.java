@@ -779,7 +779,7 @@ public class DateUtils {
 	 * @return
 	 *
 	 * Created on 2017/11/3
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static String splitTime(Date startTime, Date endTime ) {
 		//开始时间
@@ -842,7 +842,7 @@ public class DateUtils {
 	 * @return
 	 *
 	 * Created on 2017/11/3
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static String splitTime(String startTime, String endTime ) {
 		Date startDate = StringToDate(startTime, DateStyle.HH_MM_SS);
@@ -856,7 +856,7 @@ public class DateUtils {
 	 * @return 数值解析后的真实时间 -- 会议开始时间
 	 *
 	 * Created on 2017/11/22
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static Date numberByStartTime(int number) {
 		int i = (number - 1) % 2;
@@ -875,7 +875,7 @@ public class DateUtils {
 	 * @return 数值解析后的真实时间 -- 会议结束时间
 	 *
 	 * Created on 2017/11/22
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static Date numberByEndTime(int number) {
 		return addMinute(numberByStartTime(number), 30);
@@ -888,7 +888,7 @@ public class DateUtils {
 	 * @return
 	 *
 	 * Created on 2017/11/3
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static boolean isSameDate(Date d1, Date d2) {
 		if(null == d1 || null == d2)
@@ -909,7 +909,7 @@ public class DateUtils {
 	 * @return 时间一 减 时间二 的值
 	 *
 	 * Created on 2017/11/10
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static int dayDiff(Date date1, Date date2, int type) {
 		long diff = date1.getTime() - date2.getTime();
@@ -937,7 +937,7 @@ public class DateUtils {
 	 * @return 列2017-11-22 17:13返回17:00；列2017-11-22 17:59返回17:30
 	 *
 	 * Created on 2017/11/22
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static Date wholeHour(Date date){
 		int hour = DateUtils.getHour(date);
@@ -963,7 +963,7 @@ public class DateUtils {
 	 * @param startDate 开始时间
 	 * @param endDate 结束时间
 	 * @return 相差的月数0.5的倍数
-	 * @author 缪志红
+	 * @author 葛伟
 	 */
 	public static double getMonths(Date startDate, Date endDate) {
         int startYear = DateUtils.getYear(startDate);
@@ -1046,7 +1046,7 @@ public class DateUtils {
 	 * Created on 2017年12月05日
 	 *
 	 * @return 拆分时间段Integer值
-	 * @author 缪志红
+	 * @author 葛伟
 	 */
 	public static Integer getSplitTimeByNow() {
 		return getSplitTime(new Date());
@@ -1057,7 +1057,7 @@ public class DateUtils {
 	 * Created on 2018年1月14日
 	 *
 	 * @return 拆分时间段Integer值
-	 * @author 缪志红
+	 * @author 葛伟
 	 */
 	public static Integer getSplitTime(Date date) {
 		int hour = DateUtils.getHour(date);
@@ -1074,7 +1074,7 @@ public class DateUtils {
 	 * @return 当前月第一天
 	 *
 	 * Created on 2017/12/15
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static Date getfirstDate(){
 		Calendar c = Calendar.getInstance();
@@ -1088,7 +1088,7 @@ public class DateUtils {
 	 * @return 当前月的最后一天
 	 *
 	 * Created on 2017/12/15
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static Date getlastDate(){
 		Calendar c = Calendar.getInstance();
@@ -1102,7 +1102,7 @@ public class DateUtils {
 	 * @return 指定的最后一天
 	 *
 	 * Created on 2017/12/15
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static int getLastDay(Date date){
 		Calendar c = Calendar.getInstance();
@@ -1116,7 +1116,7 @@ public class DateUtils {
 	 * @return 指定的第一天
 	 *
 	 * Created on 2017/12/15
-	 * @author: 尹归晋
+	 * @author: 葛伟
 	 */
 	public static int getFirstDay(Date date){
 		Calendar c = Calendar.getInstance();
@@ -1129,7 +1129,7 @@ public class DateUtils {
 	 * <p>Description:[获取当前日期字符串]</p>
 	 * Created on 2018/1/2
 	 *
-	 * @author 缪志红
+	 * @author 葛伟
 	 */
 	public static String getCurrentDateString() {
 		return DateToString(new Date(), DateStyle.YYYY_MM_DD);
@@ -1139,7 +1139,7 @@ public class DateUtils {
 	 * <p>Description:[获取当前日期]</p>
 	 * Created on 2018/1/2
 	 *
-	 * @author 缪志红
+	 * @author 葛伟
 	 */
 	public static Date getCurrentDate() {
 		return StringToDate(getCurrentDateString(), DateStyle.YYYY_MM_DD);
@@ -1152,7 +1152,7 @@ public class DateUtils {
 	 * @param targetDate 目标日期
 	 * @param targetTime 目标时间
 	 * @return
-	 * @author:[尹归晋]
+	 * @author:[葛伟]
 	 */
 	public static boolean compareNowHours(Date targetDate, Date targetTime){
 		Date date = new Date();

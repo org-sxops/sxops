@@ -15,7 +15,7 @@ import java.util.Date;
  * <p>Description: [实体类]</p>
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  * Created on 2017年11月10日
- * @author  <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+ * @author  <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 @Table(name = "operate_log")
@@ -85,7 +85,7 @@ public class OperateLog {
 	 * <p>Description:[获取]</p>
 	 * Created on 2017年11月10日
 	 * @return Long 
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */	
 	public Long getId() {
 		return id;
@@ -96,7 +96,7 @@ public class OperateLog {
 	 * <p>Discription:[设置]</p>
 	 * Created on 2017年11月10日
 	 * @param id 
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */		
     public void setId(Long id) {
 		this.id = id;
@@ -107,7 +107,7 @@ public class OperateLog {
 	 * <p>Description:[获取]</p>
 	 * Created on 2017年11月10日
 	 * @return String 
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */	
 	public String getOperateDesc() {
 		return operateDesc;
@@ -118,7 +118,7 @@ public class OperateLog {
 	 * <p>Discription:[设置]</p>
 	 * Created on 2017年11月10日
 	 * @param operateDesc 
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */		
     public void setOperateDesc(String operateDesc) {
 		this.operateDesc = operateDesc;
@@ -136,7 +136,7 @@ public class OperateLog {
 	 * <p>Description:[获取操作人]</p>
 	 * Created on 2017年11月10日
 	 * @return String 操作人
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */	
 	public String getOperator() {
 		return operator;
@@ -147,7 +147,7 @@ public class OperateLog {
 	 * <p>Discription:[设置操作人]</p>
 	 * Created on 2017年11月10日
 	 * @param operator 操作人
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */		
     public void setOperator(String operator) {
 		this.operator = operator;
@@ -158,7 +158,7 @@ public class OperateLog {
 	 * <p>Description:[获取请求路径]</p>
 	 * Created on 2017年11月10日
 	 * @return String 请求路径
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */	
 	public String getUri() {
 		return uri;
@@ -169,7 +169,7 @@ public class OperateLog {
 	 * <p>Discription:[设置请求路径]</p>
 	 * Created on 2017年11月10日
 	 * @param uri 请求路径
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */		
     public void setUri(String uri) {
 		this.uri = uri;
@@ -180,7 +180,7 @@ public class OperateLog {
 	 * <p>Description:[获取操作人ip]</p>
 	 * Created on 2017年11月10日
 	 * @return String 操作人ip
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */	
 	public String getOperateIp() {
 		return operateIp;
@@ -191,7 +191,7 @@ public class OperateLog {
 	 * <p>Discription:[设置操作人ip]</p>
 	 * Created on 2017年11月10日
 	 * @param operateIp 操作人ip
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */		
     public void setOperateIp(String operateIp) {
 		this.operateIp = operateIp;
@@ -202,7 +202,7 @@ public class OperateLog {
 	 * <p>Description:[获取请求]</p>
 	 * Created on 2017年11月10日
 	 * @return String 请求
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */	
 	public String getRequest() {
 		return request;
@@ -213,7 +213,7 @@ public class OperateLog {
 	 * <p>Discription:[设置请求]</p>
 	 * Created on 2017年11月10日
 	 * @param request 请求
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */		
     public void setRequest(String request) {
 		this.request = request;
@@ -224,7 +224,7 @@ public class OperateLog {
 	 * <p>Description:[获取系统]</p>
 	 * Created on 2017年11月10日
 	 * @return String 系统
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */	
 	public String getSystem() {
 		return system;
@@ -235,7 +235,7 @@ public class OperateLog {
 	 * <p>Discription:[设置系统]</p>
 	 * Created on 2017年11月10日
 	 * @param system 系统
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */		
     public void setSystem(String system) {
 		this.system = system;
@@ -246,7 +246,7 @@ public class OperateLog {
 	 * <p>Description:[获取操作时间]</p>
 	 * Created on 2017年11月10日
 	 * @return Date 操作时间
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */	
 	public Date getOperateTime() {
 		return operateTime;
@@ -257,7 +257,7 @@ public class OperateLog {
 	 * <p>Discription:[设置操作时间]</p>
 	 * Created on 2017年11月10日
 	 * @param operateTime 操作时间
-	 * @author [尹归晋]
+	 * @author [葛伟]
 	 */		
     public void setOperateTime(Date operateTime) {
 		this.operateTime = operateTime;

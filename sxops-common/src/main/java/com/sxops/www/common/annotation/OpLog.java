@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 /**
  * <p> Description: [需要记录操作日志的方法]</p>
  * Created on: 2017/11/6 11:54
- * @author <a href="mailto: liruifeng@sxops.com">尹归晋</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 @Target({ElementType.TYPE, ElementType.METHOD})

@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  * Created on 2017年11月23日
  *
- * @author <a href="mailto: miaozhihong@sxops.com">缪志红</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 public class MathUtils {

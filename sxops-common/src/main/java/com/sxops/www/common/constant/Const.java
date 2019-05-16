@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * <p>Discription: [常量类] </p>
  * Created on: 2017/10/31 16:54
- * @author [尹归晋]
+ * @author [葛伟]
  */
 public interface Const {
 

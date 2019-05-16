@@ -62,7 +62,7 @@ public class HTMLStringFilter {
 	 * </p>
 	 * Created on 2017年11月21日
 	 * 
-	 * @author:[尹归晋]
+	 * @author:[葛伟]
 	 */
 	private void initWiteHtmlContent() {
 		if (StringUtils.isEmpty(witeHtmlContent)) {
@@ -98,7 +98,7 @@ public class HTMLStringFilter {
 	 * Created on 2017年11月21日
 	 * 
 	 * @return
-	 * @author:[尹归晋]
+	 * @author:[葛伟]
 	 */
 	private void initRegexMap() {
 		if (regexMap == null && !StringUtils.isEmpty(witeHtmlContent)) {
@@ -137,7 +137,7 @@ public class HTMLStringFilter {
 	 * </p>
 	 * Created on 2017年11月21日
 	 * 
-	 * @author:[尹归晋]
+	 * @author:[葛伟]
 	 */
 	private void initWhitelist() {
 		if (whitelist == null && !StringUtils.isEmpty(witeHtmlContent)) {
