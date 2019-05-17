@@ -62,11 +62,11 @@ public class ResponseBodyWrapHandler implements HandlerMethodReturnValueHandler 
         }
 
         if (RequestMethod.POST.name().equals(requestMethodStr)) {
-            return ResultModel.success(APIStatus.SUCESS_000000, body);
+            return ResultModel.success(APIStatus.SUCESS, body);
         } else if (RequestMethod.DELETE.name().equals(requestMethodStr)) {
-            return ResultModel.success(APIStatus.SUCESS_000000, body);
+            return ResultModel.success(APIStatus.SUCESS, body);
         }
-        ResultModel<Object> success = ResultModel.success(APIStatus.SUCESS_000000, body);
+        ResultModel<Object> success = ResultModel.success(APIStatus.SUCESS, body);
 
         return success;
     }

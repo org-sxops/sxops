@@ -27,8 +27,6 @@ public class LoginServiceImpl  implements LoginService {
         lfUserInfo.setEnabled("1");
         List<LfUserInfo> select = lfUserInfoService.select(lfUserInfo);
         if(CollectionUtils.isEmpty(select)){
-            //test
-            //TODO 用户邮箱
             lfUserInfo.setCreateSource("LinFen-Server");
             lfUserInfo.setAreaCoding("0357");
             lfUserInfo.setAddress("遥远的地方");
@@ -39,6 +37,7 @@ public class LoginServiceImpl  implements LoginService {
             lfUserInfo.setIdentityCards("131199999999999999");
             lfUserInfo.setPhone("13000000000");
             lfUserInfo.setSex("1");
+            lfUserInfo.setEmail("geweiHome@163.com");
             lfUserInfo.setUserName("葛伟");
             lfUserInfoService.insert(lfUserInfo);
         }else {

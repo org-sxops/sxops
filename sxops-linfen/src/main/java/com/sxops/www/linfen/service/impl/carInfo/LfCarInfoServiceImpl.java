@@ -1,6 +1,8 @@
 package com.sxops.www.linfen.service.impl.carInfo;
 
+import com.sxops.www.common.enums.APIStatus;
 import com.sxops.www.common.util.StringUtils;
+import com.sxops.www.linfen.customException.CarInfoException;
 import com.sxops.www.linfen.dao.mapper.carInfo.LfCarInfoMapper;
 import com.sxops.www.linfen.dao.model.carInfo.LfCarInfo;
 import com.sxops.www.linfen.service.carInfo.LfCarInfoService;
@@ -44,7 +46,7 @@ public class LfCarInfoServiceImpl extends BaseServiceImpl<LfCarInfo, LfCarInfoMa
     public void checkCarModelIsNotNull(LfCarInfo CarInfo, boolean isUpdate) {
         log.info("模块:【车辆信息】，操作:【入库操作数据校验】参数：[ CarInfo: {}, 是否是更新操作： {}]", CarInfo.toString(), isUpdate);
         if (ObjectUtils.isEmpty(CarInfo)) {
-            throw new RuntimeException("车辆信息为空");
+            throw new CarInfoException(APIStatus.ERROR_2001.getCode(),"车辆信息为空");
         }
         StringBuffer buffer = new StringBuffer();
         if (isUpdate) {
@@ -63,7 +65,7 @@ public class LfCarInfoServiceImpl extends BaseServiceImpl<LfCarInfo, LfCarInfoMa
         }
         if (buffer.length() > 0) {
             log.info("模块:【车辆信息】，操作:【入库操作数据校验】,参数：[ CarInfo: {}, 是否是更新操作： {}],错误信息：{}", CarInfo.toString(), isUpdate, buffer.toString());
-            throw new RuntimeException("车辆信息中:" + buffer.toString() + " 不允许进行入库操作");
+            throw new CarInfoException(APIStatus.ERROR_2001.getCode(),"车辆信息中:" + buffer.toString() + " 不允许进行入库操作");
         }
 
     }

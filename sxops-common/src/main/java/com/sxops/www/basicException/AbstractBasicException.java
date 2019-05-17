@@ -10,10 +10,14 @@ import java.util.Locale;
 @EqualsAndHashCode(callSuper = true)
 public abstract class AbstractBasicException extends RuntimeException {
 
-    /** 序列化版本号 */
+    /**
+     * 序列化版本号
+     */
     private static final long serialVersionUID = 1L;
 
-    /** 错误编码 */
+    /**
+     * 错误编码
+     */
     private final Integer code;
 
     public AbstractBasicException(APIStatus apiStatus) {
@@ -21,14 +25,13 @@ public abstract class AbstractBasicException extends RuntimeException {
     }
 
     public AbstractBasicException(APIStatus apiStatus, Throwable exception) {
-        this(apiStatus.getCode(),   apiStatus.getMessage() , exception) ;
+        this(apiStatus.getCode(), apiStatus.getMessage(), exception);
     }
 
     public AbstractBasicException(Integer code, String message, Throwable exception) {
         super(message, exception);
         this.code = code;
     }
-
 
 
 }

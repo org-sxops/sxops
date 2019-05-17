@@ -14,10 +14,10 @@ public class ResultModel<T> {
     private T data;
 
     /** 错误码 */
-    private String code = "000000";
+    private String code = "200";
 
     /** 提示信息 */
-    private String msg = null;
+    private String msg = "成功";
 
     private Status status;
     public ResultModel(int code, String message, boolean statusFlag, T data) {
@@ -38,7 +38,7 @@ public class ResultModel<T> {
 
 
     public static <T> ResultModel<T> success(T data) {
-        return new ResultModel<>(APIStatus.SUCESS_000000.getCode(), APIStatus.SUCESS_000000.getMessage(), true, data);
+        return new ResultModel<>(APIStatus.SUCESS.getCode(), APIStatus.SUCESS.getMessage(), true, data);
     }
     public static <T> ResultModel<T> success(APIStatus apiStatus, T data) {
         return new ResultModel<>(apiStatus.getCode(), apiStatus.getMessage(), true, data);
