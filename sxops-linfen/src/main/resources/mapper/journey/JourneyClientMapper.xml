@@ -17,7 +17,7 @@
     <result column="is_top" property="isTop" jdbcType="VARCHAR" />
     <result column="top_time" property="topTime" jdbcType="BIGINT" />
     <result column="top_expiration_date" property="topExpirationDate" jdbcType="TIMESTAMP" />
-    <result column="enable" property="enable" jdbcType="VARCHAR" />
+    <result column="enable" property="enable" jdbcType="INTEGER" />
     <result column="last_refresh_time" property="lastRefreshTime" jdbcType="TIMESTAMP" />
     <result column="top_weight" property="topWeight" jdbcType="DECIMAL" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />

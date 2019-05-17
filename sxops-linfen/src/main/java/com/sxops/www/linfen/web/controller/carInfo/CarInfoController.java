@@ -1,9 +1,11 @@
 package com.sxops.www.linfen.web.controller.carInfo;
 
 import com.sxops.www.common.annotation.OpLog;
+import com.sxops.www.common.enums.UserAssociatedEnum;
 import com.sxops.www.common.model.Pager;
 import com.sxops.www.linfen.dao.model.carInfo.CarInfo;
 import com.sxops.www.linfen.service.carInfo.CarInfoService;
+import com.sxops.www.linfen.service.userAssociated.UserAssociatedService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -22,6 +24,9 @@ public class CarInfoController {
 
     @Autowired
     private CarInfoService carInfoService;
+    @Autowired
+    private UserAssociatedService userAssociatedService;
+
 
     @ApiOperation(value = "新增接口,[geweiHome@163.com]")
     @PostMapping("addCar")
@@ -51,6 +56,7 @@ public class CarInfoController {
             log.info("模块：【车辆信息】，操作：【车辆信息更新接口】,参数：【{}】", carInfo.toString());
             carInfoService.checkCarModelIsNotNull(carInfo, true);
             carInfoService.updateByPrimaryKey(carInfo);
+            userAssociatedService.updateModelByUuId(carInfo.getOwnedUserUuid(),carInfo.getUuid(),carInfo.getEnable(), UserAssociatedEnum.OTHER_CAR.getOtherType());
             return  carInfo;
     }
 

@@ -1,13 +1,16 @@
 package com.sxops.www.linfen.service.impl.carInfo;
 
 import com.sxops.www.common.enums.APIStatus;
+import com.sxops.www.common.enums.UserAssociatedEnum;
 import com.sxops.www.common.util.StringUtils;
 import com.sxops.www.linfen.customException.CarInfoException;
 import com.sxops.www.linfen.dao.mapper.carInfo.CarInfoMapper;
+import com.sxops.www.linfen.dao.model.basic.UserAssociated;
 import com.sxops.www.linfen.dao.model.carInfo.CarInfo;
 import com.sxops.www.linfen.service.carInfo.CarInfoService;
 import com.sxops.www.linfen.service.impl.basic.BaseServiceImpl;
 import com.sxops.www.linfen.service.login.LoginService;
+import com.sxops.www.linfen.service.userAssociated.UserAssociatedService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,18 +25,32 @@ import java.util.UUID;
 public class CarInfoServiceImpl extends BaseServiceImpl<CarInfo, CarInfoMapper> implements CarInfoService {
 
     @Autowired
-    private LoginService loginService;
+    private UserAssociatedService userAssociatedService;
 
     @Override
     public CarInfo insertCarInfo(CarInfo carInfo) {
         this.checkCarModelIsNotNull(carInfo, false);
+        String carInfoUUid = this.getCarInfoUUid();
         carInfo.setId(null);
-        carInfo.setOwnedUserUuid(loginService.getLoginUser().getUuid());
         carInfo.setCreateTime(new Date());
         carInfo.setUpdateTime(new Date());
-        carInfo.setUuid(getCarInfoUUid());
+        carInfo.setUuid(carInfoUUid);
         this.insert(carInfo);
+        this.insertUserAssociated(carInfoUUid,carInfo.getOwnedUserUuid());
         return carInfo;
+    }
+
+    /**
+     * 添加用户关联中间表
+     * @param carInfoUUid
+     * @param ownedUserUuid
+     */
+    private void insertUserAssociated(String carInfoUUid, String ownedUserUuid) {
+        UserAssociated userAssociated = new UserAssociated();
+        userAssociated.setUserUuid(ownedUserUuid);
+        userAssociated.setOtherUuid(carInfoUUid);
+        userAssociated.setOtherType(UserAssociatedEnum.OTHER_CAR.getOtherType());
+        userAssociatedService.insert(userAssociated);
     }
 
     /**
@@ -56,9 +73,9 @@ public class CarInfoServiceImpl extends BaseServiceImpl<CarInfo, CarInfoMapper> 
             if (StringUtils.isEmpty(CarInfo.getUuid())) {
                 buffer.append("UUID为空，");
             }
-            if (StringUtils.isEmpty(CarInfo.getOwnedUserUuid())) {
-                buffer.append("车主信息为空，");
-            }
+        }
+        if (StringUtils.isEmpty(CarInfo.getOwnedUserUuid())) {
+            buffer.append("车主信息为空，");
         }
         if (StringUtils.isEmpty(CarInfo.getCarLicensePlate())) {
             buffer.append("车牌信息为空，");

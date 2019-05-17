@@ -9,11 +9,12 @@
     <result column="user_uuid" property="userUuid" jdbcType="VARCHAR" />
     <result column="other_uuid" property="otherUuid" jdbcType="VARCHAR" />
     <result column="other_type" property="otherType" jdbcType="INTEGER" />
+    <result column="enable" property="enable" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     <!--
       WARNING - @mbg.generated
     -->
-    id, user_uuid, other_uuid, other_type
+    id, user_uuid, other_uuid, other_type,enable
   </sql>
 </mapper>

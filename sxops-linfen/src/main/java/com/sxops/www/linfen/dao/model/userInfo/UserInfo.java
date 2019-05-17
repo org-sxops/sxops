@@ -74,7 +74,7 @@ public class UserInfo  {
     /**
      * 是否启用
      */
-    private String enabled;
+    private Integer enable;
 
     /**
      * 创建时间

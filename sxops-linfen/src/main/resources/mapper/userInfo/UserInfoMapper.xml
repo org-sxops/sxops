@@ -16,7 +16,7 @@
     <result column="area_coding" property="areaCoding" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="user_type" property="userType" jdbcType="VARCHAR" />
-    <result column="enabled" property="enabled" jdbcType="VARCHAR" />
+    <result column="enable" property="enable" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="updata_time" property="updataTime" jdbcType="TIMESTAMP" />
     <result column="create_source" property="createSource" jdbcType="VARCHAR" />

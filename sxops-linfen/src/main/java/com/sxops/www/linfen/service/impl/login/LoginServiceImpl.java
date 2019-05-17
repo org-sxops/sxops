@@ -1,5 +1,6 @@
 package com.sxops.www.linfen.service.impl.login;
 
+import com.sxops.www.common.enums.StatusEnum;
 import com.sxops.www.common.util.CollectionUtils;
 import com.sxops.www.linfen.dao.model.userInfo.UserInfo;
 import com.sxops.www.linfen.service.login.LoginService;
@@ -21,10 +22,10 @@ public class LoginServiceImpl  implements LoginService {
     private UserInfoService userInfoService;
     @Override
     public UserInfo getLoginUser() {
-        String uuid = "lfusgewei";
+        String uuid = "gewei";
         UserInfo UserInfo = new UserInfo();
         UserInfo.setUuid(uuid);
-        UserInfo.setEnabled("1");
+        UserInfo.setEnable(StatusEnum.TRUE.getEnbleCode());
         List<UserInfo> select = userInfoService.select(UserInfo);
         if(CollectionUtils.isEmpty(select)){
             UserInfo.setCreateSource("LinFen-Server");
