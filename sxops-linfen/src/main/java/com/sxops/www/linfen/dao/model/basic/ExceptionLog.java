@@ -3,6 +3,7 @@ package com.sxops.www.linfen.dao.model.basic;
 
 import com.sxops.www.common.annotation.Ignore;
 import com.sxops.www.common.annotation.Like;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,14 +16,14 @@ import java.util.Date;
  * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
-@Table(name = "exception_log")
+@Data
+@Table(name = "lf_exception_log")
 public class ExceptionLog {
 
     /**
      * id
      **/
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
@@ -82,6 +83,12 @@ public class ExceptionLog {
     @Transient
     @Ignore
     private String createTimeStart;
+
+    /**
+     * 日志类型
+     */
+    @Column(name = "exception_type")
+    private String exceptionType;
 
     /**
      * 操作时间范围查询-结束时间

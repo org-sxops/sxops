@@ -6,9 +6,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "lf_journey_client")
+@Table(name = "lf_journey_server")
 @ToString
-public class LfJourneyClient {
+public class JourneyServer {
     /**
      * ID
      */
@@ -40,6 +40,23 @@ public class LfJourneyClient {
     private String objectivePlace;
 
     /**
+     * 可乘人数
+     */
+    @Column(name = "surplus_number")
+    private Integer surplusNumber;
+
+    /**
+     * 总载人数
+     */
+    @Column(name = "number_of_passengers")
+    private Integer numberOfPassengers;
+
+    /**
+     * 简短描述
+     */
+    private String describe;
+
+    /**
      * 预计出发时间
      */
     @Column(name = "es_departure_time")
@@ -52,15 +69,10 @@ public class LfJourneyClient {
     private Date esArrivalTime;
 
     /**
-     * 简短描述
+     * 预计行驶时间
      */
-    private String describe;
-
-    /**
-     * 总人数
-     */
-    @Column(name = "total_number")
-    private Integer totalNumber;
+    @Column(name = "driving_time")
+    private String drivingTime;
 
     /**
      * 是否置顶
@@ -194,6 +206,60 @@ public class LfJourneyClient {
     }
 
     /**
+     * 获取可乘人数
+     *
+     * @return surplus_number - 可乘人数
+     */
+    public Integer getSurplusNumber() {
+        return surplusNumber;
+    }
+
+    /**
+     * 设置可乘人数
+     *
+     * @param surplusNumber 可乘人数
+     */
+    public void setSurplusNumber(Integer surplusNumber) {
+        this.surplusNumber = surplusNumber;
+    }
+
+    /**
+     * 获取总载人数
+     *
+     * @return number_of_passengers - 总载人数
+     */
+    public Integer getNumberOfPassengers() {
+        return numberOfPassengers;
+    }
+
+    /**
+     * 设置总载人数
+     *
+     * @param numberOfPassengers 总载人数
+     */
+    public void setNumberOfPassengers(Integer numberOfPassengers) {
+        this.numberOfPassengers = numberOfPassengers;
+    }
+
+    /**
+     * 获取简短描述
+     *
+     * @return describe - 简短描述
+     */
+    public String getDescribe() {
+        return describe;
+    }
+
+    /**
+     * 设置简短描述
+     *
+     * @param describe 简短描述
+     */
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
+
+    /**
      * 获取预计出发时间
      *
      * @return es_departure_time - 预计出发时间
@@ -230,39 +296,21 @@ public class LfJourneyClient {
     }
 
     /**
-     * 获取简短描述
+     * 获取预计行驶时间
      *
-     * @return describe - 简短描述
+     * @return driving_time - 预计行驶时间
      */
-    public String getDescribe() {
-        return describe;
+    public String getDrivingTime() {
+        return drivingTime;
     }
 
     /**
-     * 设置简短描述
+     * 设置预计行驶时间
      *
-     * @param describe 简短描述
+     * @param drivingTime 预计行驶时间
      */
-    public void setDescribe(String describe) {
-        this.describe = describe;
-    }
-
-    /**
-     * 获取总人数
-     *
-     * @return total_number - 总人数
-     */
-    public Integer getTotalNumber() {
-        return totalNumber;
-    }
-
-    /**
-     * 设置总人数
-     *
-     * @param totalNumber 总人数
-     */
-    public void setTotalNumber(Integer totalNumber) {
-        this.totalNumber = totalNumber;
+    public void setDrivingTime(String drivingTime) {
+        this.drivingTime = drivingTime;
     }
 
     /**

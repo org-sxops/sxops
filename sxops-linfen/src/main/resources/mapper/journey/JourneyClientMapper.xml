@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sxops.www.linfen.dao.mapper.journey.LfJourneyClientMapper" >
-  <resultMap id="BaseResultMap" type="com.sxops.www.linfen.dao.model.journey.LfJourneyClient" >
+<mapper namespace="com.sxops.www.linfen.dao.mapper.journey.JourneyClientMapper" >
+  <resultMap id="BaseResultMap" type="com.sxops.www.linfen.dao.model.journey.JourneyClient" >
     <!--
       WARNING - @mbg.generated
     -->

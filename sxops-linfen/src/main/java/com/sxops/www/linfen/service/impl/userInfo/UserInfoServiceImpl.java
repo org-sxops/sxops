@@ -3,10 +3,10 @@ package com.sxops.www.linfen.service.impl.userInfo;
 import com.sxops.www.linfen.customException.UserInfoException;
 import com.sxops.www.common.enums.APIStatus;
 import com.sxops.www.common.util.StringUtils;
-import com.sxops.www.linfen.dao.mapper.userInfo.LfUserInfoMapper;
-import com.sxops.www.linfen.dao.model.userInfo.LfUserInfo;
+import com.sxops.www.linfen.dao.mapper.userInfo.UserInfoMapper;
+import com.sxops.www.linfen.dao.model.userInfo.UserInfo;
 import com.sxops.www.linfen.service.impl.basic.BaseServiceImpl;
-import com.sxops.www.linfen.service.userInfo.LfUserInfoService;
+import com.sxops.www.linfen.service.userInfo.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -17,10 +17,10 @@ import java.util.UUID;
 
 @Service
 @Slf4j
-public class LfUserInfoServiceImpl extends BaseServiceImpl<LfUserInfo, LfUserInfoMapper> implements LfUserInfoService {
+public class UserInfoServiceImpl extends BaseServiceImpl<UserInfo, UserInfoMapper> implements UserInfoService {
 
     @Override
-    public LfUserInfo insertUserInfo(LfUserInfo userInfo) {
+    public UserInfo insertUserInfo(UserInfo userInfo) {
         this.checkUserModelIsNotNull(userInfo, false);
         userInfo.setId(null);
         userInfo.setCreateTime(new Date());
@@ -36,7 +36,7 @@ public class LfUserInfoServiceImpl extends BaseServiceImpl<LfUserInfo, LfUserInf
      * @param isUpdate
      */
     @Override
-    public void checkUserModelIsNotNull(LfUserInfo userInfo, boolean isUpdate) {
+    public void checkUserModelIsNotNull(UserInfo userInfo, boolean isUpdate) {
         log.info("模块:【用户信息】，操作:【入库操作数据校验】参数：[ userInfo: {}, 是否是更新操作： {}]", userInfo.toString(), isUpdate);
         if (ObjectUtils.isEmpty(userInfo)) {
             throw new UserInfoException(APIStatus.ERROR_2001.getCode(),"用户信息为空");

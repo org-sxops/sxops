@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "lf_user_info")
 @ToString
 @Data
-public class LfUserInfo {
+public class UserInfo  {
     /**
      * ID
      */

@@ -1,6 +1,6 @@
 package com.sxops.www.linfen.service.carInfo;
 
-import com.sxops.www.linfen.dao.model.carInfo.LfCarInfo;
+import com.sxops.www.linfen.dao.model.carInfo.CarInfo;
 import com.sxops.www.linfen.service.basic.BaseService;
 import org.springframework.stereotype.Repository;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
  * 车辆信息接口
  */
 @Repository
-public interface LfCarInfoService extends BaseService<LfCarInfo> {
+public interface CarInfoService extends BaseService<CarInfo> {
 
 
     /**
@@ -16,7 +16,7 @@ public interface LfCarInfoService extends BaseService<LfCarInfo> {
      *
      * @param carInfo
      */
-    LfCarInfo insertCarInfo(LfCarInfo carInfo);
+    CarInfo insertCarInfo(CarInfo carInfo);
 
     /**
      * 校验数据完整性接口
@@ -24,5 +24,5 @@ public interface LfCarInfoService extends BaseService<LfCarInfo> {
      * @param carInfo
      * @param isUpdate
      */
-    void checkCarModelIsNotNull(LfCarInfo carInfo, boolean isUpdate);
+    void checkCarModelIsNotNull(CarInfo carInfo, boolean isUpdate);
 }

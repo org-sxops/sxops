@@ -1,10 +1,9 @@
 package com.sxops.www.linfen.web.controller.carInfo;
 
 import com.sxops.www.common.annotation.OpLog;
-import com.sxops.www.common.model.AjaxInfo;
 import com.sxops.www.common.model.Pager;
-import com.sxops.www.linfen.dao.model.carInfo.LfCarInfo;
-import com.sxops.www.linfen.service.carInfo.LfCarInfoService;
+import com.sxops.www.linfen.dao.model.carInfo.CarInfo;
+import com.sxops.www.linfen.service.carInfo.CarInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -22,14 +21,14 @@ import springfox.documentation.annotations.ApiIgnore;
 public class CarInfoController {
 
     @Autowired
-    private LfCarInfoService lfCarInfoService;
+    private CarInfoService carInfoService;
 
     @ApiOperation(value = "新增接口,[geweiHome@163.com]")
     @PostMapping("addCar")
     @OpLog(desc = "车辆新增接口")
-    public LfCarInfo addCar(@RequestBody LfCarInfo carInfo) {
+    public CarInfo addCar(@RequestBody CarInfo carInfo) {
         log.info("模块：【用户信息】，操作：【分页查询】,参数：【{}】", carInfo.toString());
-        return lfCarInfoService.insertCarInfo(carInfo);
+        return carInfoService.insertCarInfo(carInfo);
     }
 
     @ApiOperation(value = "查询接口,[geweiHome@163.com]")
@@ -40,18 +39,18 @@ public class CarInfoController {
             @ApiImplicitParam(name = "pageSize", value = "当页大小", paramType = "query", dataType = "int")
     })
     @GetMapping("getPageCar")
-    public Pager<LfCarInfo> getPageCar(@ApiIgnore Pager pager, @ApiIgnore LfCarInfo carInfo) {
+    public Pager<CarInfo> getPageCar(@ApiIgnore Pager pager, @ApiIgnore CarInfo carInfo) {
         log.info("模块：【车辆信息】，操作：【分页查询】,参数：【{}】", carInfo.toString());
-        return lfCarInfoService.selectPage(pager, carInfo);
+        return carInfoService.selectPage(pager, carInfo);
     }
 
     @ApiOperation(value = "更新接口[geweiHome@163.com]")
     @PostMapping("updateCar")
     @OpLog(desc = "车辆信息更新接口")
-    public LfCarInfo updateCar(@RequestBody LfCarInfo carInfo) {
+    public CarInfo updateCar(@RequestBody CarInfo carInfo) {
             log.info("模块：【车辆信息】，操作：【车辆信息更新接口】,参数：【{}】", carInfo.toString());
-            lfCarInfoService.checkCarModelIsNotNull(carInfo, true);
-            lfCarInfoService.updateByPrimaryKey(carInfo);
+            carInfoService.checkCarModelIsNotNull(carInfo, true);
+            carInfoService.updateByPrimaryKey(carInfo);
             return  carInfo;
     }
 

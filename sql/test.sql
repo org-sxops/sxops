@@ -101,15 +101,35 @@ CREATE TABLE `lf_user_info` (
   `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT '邮箱',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户信息表';
-CREATE TABLE `operate_log` (
+
+DROP TABLE IF EXISTS `lf_operate_log`;
+CREATE TABLE `lf_operate_log` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `operate_desc` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `operator_code` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `operator_name` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `uri` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `operate_ip` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `request` text CHARACTER SET utf8 COLLATE utf8_general_ci,
-  `system` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `operate_ip` varchar(50) CHARACTER SET utf8  DEFAULT NULL,
+  `request` text CHARACTER SET utf8 ,
+  `source_system` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `operate_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='操作日志表';
+
+DROP TABLE IF EXISTS `lf_exception_log`;
+CREATE TABLE `lf_exception_log` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `uri` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT 'URL',
+  `operator_code` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '操作人id',
+  `operator` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '操作人',
+  `operator_ip` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '操作人ip',
+  `host_name` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '主机',
+  `brower_message` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '浏览器信息',
+  `exception_type` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '日志类型',
+  `description` text CHARACTER SET utf8  COMMENT '错误描述' ,
+  `detail` text CHARACTER SET utf8  COMMENT '错误详细' ,
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='异常信息记录表';
+
 

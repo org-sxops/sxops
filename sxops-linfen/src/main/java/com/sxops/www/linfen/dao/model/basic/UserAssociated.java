@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Table(name = "lf_user_associated")
 @ToString
-public class LfUserAssociated {
+public class UserAssociated {
     @Id
     private Long id;
 

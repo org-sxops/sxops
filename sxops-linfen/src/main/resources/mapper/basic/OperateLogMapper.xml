@@ -7,10 +7,11 @@
 			<id column="id" property="id" />
 			<id column="operate_desc" property="operateDesc" />
 			<id column="operator_code" property="operatorCode" />
+			<id column="operator_name" property="operatorName" />
 			<id column="uri" property="uri" />
 			<id column="operate_ip" property="operateIp" />
 			<id column="request" property="request" />
-			<id column="system" property="system" />
+			<id column="source_system" property="sourceSystem" />
 			<id column="operate_time" property="operateTime" />
     </resultMap>
 
@@ -19,10 +20,11 @@
         id,
         operate_desc,
         operator_code,
+        operator_name,
         uri,
         operate_ip,
         request,
-        system,
+        source_system,
         operate_time
     </sql>
 

@@ -1,12 +1,17 @@
 package com.sxops.www.linfen.service.impl.basic;
 
+import com.sxops.www.basicException.AbstractBasicException;
 import com.sxops.www.common.util.NetUtil;
 import com.sxops.www.linfen.dao.model.basic.ExceptionLog;
+import com.sxops.www.linfen.dao.model.userInfo.UserInfo;
 import com.sxops.www.linfen.service.basic.ExceptionLogService;
 import com.sxops.www.linfen.service.basic.ExceptionService;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Value;
+import com.sxops.www.linfen.service.login.LoginService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -23,60 +28,20 @@ import java.util.Date;
  * @version 1.0
  */
 @Component
+@Slf4j
 public class ExceptionServiceImpl implements ExceptionService {
 
-
-    @Value("${server.display-name}")
-    private String serverName;
 
     @Resource
     private ExceptionLogService exceptionLogService;
 
-
-    private String mailTemplate = "操作人：%s\n" +
-            "系统：%s\n" +
-            "URL：%s\n" +
-            "IP：%s\n" +
-            "操作时间：%s\n" +
-            "错误描述：%s\n" +
-            "浏览器信息：%s\n" +
-            "错误详情：%s";
+    @Autowired
+    private LoginService loginService;
 
     @Override
-    public void handler(Object user, String exceptionMsg, Exception e, HttpServletRequest request) {
-        try {
-            // 如果异常时用来提示的，那么什么都不做
-          /*  if (e instanceof WarnException) {
-                return;
-            }*/
-            ExceptionLog exceptionLog = new ExceptionLog();
-            exceptionLog.setServerName(serverName);
-            exceptionLog.setOperator(serverName);
-            exceptionLog.setDescription(exceptionMsg);
-            if (request != null) {
-                exceptionLog.setOperatorIp(NetUtil.getIpAddr(request));
-                exceptionLog.setUri(request.getRequestURI());
-                exceptionLog.setBrowerMessage(request.getHeader("User-Agent"));
-            }
-            if (user != null) {
-                exceptionLog.setOperatorCode(StringUtils.defaultString("gewei"));
-            }
-            //输出错误堆栈
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            PrintStream ps = new PrintStream(outputStream);
-            e.printStackTrace(ps);
-            exceptionLog.setDetail(outputStream.toString());
-            exceptionLog.setCreateTime(new Date());
-            exceptionLog.setHostName(InetAddress.getLocalHost().getHostName());
-            exceptionLogService.insert(exceptionLog);
-            sendMail(exceptionLog);
-        } catch (Exception e1) {
-            // LOGGER.warn(LogMessage.getNew().add("存储异常日志失败", e1.getMessage()).toString());
-        }
+    public void handler(Object user, Exception e, HttpServletRequest request) {
+
     }
-
-    /*   */
-
 
     @Override
     public void sendMail(ExceptionLog exceptionLog) {
@@ -94,9 +59,49 @@ public class ExceptionServiceImpl implements ExceptionService {
     }
 
     @Override
-    public void handler(String exceptionMsg, Exception e) {
+    public void handler(Object user, Exception e) {
 
     }
 
+    @Override
+    public void handler(Exception e) {
+        try {
+            ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+            HttpServletRequest request = servletRequestAttributes.getRequest();
+            ExceptionLog exceptionLog = new ExceptionLog();
+            String exceptionMsg;
+            if (e instanceof AbstractBasicException) {
+                AbstractBasicException basicException = (AbstractBasicException) e;
+                exceptionMsg = "[" + basicException.getCode() + "]" + basicException.getMessage();
+                exceptionLog.setExceptionType("自定义异常");
+            } else {
+                exceptionMsg = e.getMessage();
+                exceptionLog.setExceptionType("系统异常");
+            }
+            exceptionLog.setDescription(exceptionMsg);
+            if (request != null) {
+                exceptionLog.setOperatorIp(NetUtil.getIpAddr(request));
+                exceptionLog.setUri(request.getRequestURI());
+                exceptionLog.setBrowerMessage(request.getHeader("User-Agent"));
+            }
+            UserInfo userInfo = loginService.getLoginUser();
+            if (userInfo != null) {
+                String username = userInfo.getUserName() + "【" + userInfo.getPhone() + "】";
+                exceptionLog.setOperatorCode(userInfo.getUuid());
+                exceptionLog.setOperator(username);
+            }
+            //输出错误堆栈
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            PrintStream ps = new PrintStream(outputStream);
+            e.printStackTrace(ps);
+            exceptionLog.setDetail(outputStream.toString());
+            exceptionLog.setCreateTime(new Date());
+            exceptionLog.setHostName(InetAddress.getLocalHost().getHostName());
+            exceptionLogService.insert(exceptionLog);
+            sendMail(exceptionLog);
+        } catch (Exception e1) {
+            log.warn("存储异常日志失败", e1);
+        }
 
+    }
 }

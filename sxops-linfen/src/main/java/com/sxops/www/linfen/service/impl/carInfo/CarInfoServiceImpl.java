@@ -3,9 +3,9 @@ package com.sxops.www.linfen.service.impl.carInfo;
 import com.sxops.www.common.enums.APIStatus;
 import com.sxops.www.common.util.StringUtils;
 import com.sxops.www.linfen.customException.CarInfoException;
-import com.sxops.www.linfen.dao.mapper.carInfo.LfCarInfoMapper;
-import com.sxops.www.linfen.dao.model.carInfo.LfCarInfo;
-import com.sxops.www.linfen.service.carInfo.LfCarInfoService;
+import com.sxops.www.linfen.dao.mapper.carInfo.CarInfoMapper;
+import com.sxops.www.linfen.dao.model.carInfo.CarInfo;
+import com.sxops.www.linfen.service.carInfo.CarInfoService;
 import com.sxops.www.linfen.service.impl.basic.BaseServiceImpl;
 import com.sxops.www.linfen.service.login.LoginService;
 import lombok.extern.slf4j.Slf4j;
@@ -19,13 +19,13 @@ import java.util.UUID;
 
 @Service
 @Slf4j
-public class LfCarInfoServiceImpl extends BaseServiceImpl<LfCarInfo, LfCarInfoMapper> implements LfCarInfoService {
+public class CarInfoServiceImpl extends BaseServiceImpl<CarInfo, CarInfoMapper> implements CarInfoService {
 
     @Autowired
     private LoginService loginService;
 
     @Override
-    public LfCarInfo insertCarInfo(LfCarInfo carInfo) {
+    public CarInfo insertCarInfo(CarInfo carInfo) {
         this.checkCarModelIsNotNull(carInfo, false);
         carInfo.setId(null);
         carInfo.setOwnedUserUuid(loginService.getLoginUser().getUuid());
@@ -43,7 +43,7 @@ public class LfCarInfoServiceImpl extends BaseServiceImpl<LfCarInfo, LfCarInfoMa
      * @param isUpdate
      */
     @Override
-    public void checkCarModelIsNotNull(LfCarInfo CarInfo, boolean isUpdate) {
+    public void checkCarModelIsNotNull(CarInfo CarInfo, boolean isUpdate) {
         log.info("模块:【车辆信息】，操作:【入库操作数据校验】参数：[ CarInfo: {}, 是否是更新操作： {}]", CarInfo.toString(), isUpdate);
         if (ObjectUtils.isEmpty(CarInfo)) {
             throw new CarInfoException(APIStatus.ERROR_2001.getCode(),"车辆信息为空");

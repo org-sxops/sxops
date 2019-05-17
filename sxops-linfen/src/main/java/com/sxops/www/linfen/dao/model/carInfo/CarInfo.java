@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Table(name = "lf_car_info")
 @ToString
-public class LfCarInfo {
+public class CarInfo {
     @Id
     private Long id;
 
