@@ -78,7 +78,7 @@ public class CarInfoServiceImpl extends BaseServiceImpl<CarInfo, CarInfoMapper> 
     private synchronized String getCarInfoUUid() {
         String uuid = UUID.randomUUID().toString();
         uuid = uuid.replace("-", "");
-        return "lfcar"+uuid;
+        return uuid;
     }
 
 

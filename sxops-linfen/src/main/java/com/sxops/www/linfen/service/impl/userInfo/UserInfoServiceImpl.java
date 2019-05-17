@@ -72,7 +72,7 @@ public class UserInfoServiceImpl extends BaseServiceImpl<UserInfo, UserInfoMappe
     private synchronized String getUserInfoUUid() {
         String uuid = UUID.randomUUID().toString();
         uuid = uuid.replace("-", "");
-        return "lfus"+uuid;
+        return uuid;
     }
 
 
