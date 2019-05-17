@@ -71,7 +71,7 @@ public class WebExceptionHandler {
     @ExceptionHandler(value = AbstractBasicException.class)
     public final ResultModel handleBasicException(AbstractBasicException basicException) {
         log.warn("自定义异常:", basicException);
-        exceptionService.handler(basicException);
+        exceptionService.handler(basicException,"AbstractBasicException");
         return ResultModel.error(basicException.getCode(), basicException.getMessage());
     }
 
@@ -90,7 +90,7 @@ public class WebExceptionHandler {
             return jsonObject;
         }
         log.error("HTTP请求参数异常:", e);
-        exceptionService.handler(e);
+        exceptionService.handler(e,"HttpMessageNotReadableException");
         return ResultModel.error(APIStatus.ERROR_2001);
     }
 
@@ -112,7 +112,7 @@ public class WebExceptionHandler {
     @ExceptionHandler(value = DuplicateKeyException.class)
     public final ResultModel handlerDuplicateKeyException(DuplicateKeyException e) {
         log.warn("键重复异常:", e);
-        exceptionService.handler(e);
+        exceptionService.handler(e,"DuplicateKeyException");
         return ResultModel.error(APIStatus.ERROR_4002);
     }
 
@@ -120,11 +120,10 @@ public class WebExceptionHandler {
      * 数据库抛出的其他异常
      */
     @ExceptionHandler(value = DataAccessException.class)
-    public final ResultModel handlerDataAccessException(Throwable e) {
+    public final ResultModel handlerDataAccessException(DataAccessException e) {
 
-        DataAccessException exception = (DataAccessException) e;
         log.error("数据库抛出的其他异常:", e);
-        exceptionService.handler(exception);
+        exceptionService.handler(e,"DataAccessException");
         return ResultModel.error(APIStatus.ERROR_4001);
     }
 
@@ -133,7 +132,7 @@ public class WebExceptionHandler {
      */
     @ExceptionHandler(value = TransactionTimedOutException.class)
     public final ResultModel handleTransactionTimedOutException(Exception e) {
-        exceptionService.handler(e);
+        exceptionService.handler(e,"TransactionTimedOutException");
         log.warn(e.getMessage(), e);
         return ResultModel.error(APIStatus.ERROR_3003);
     }
@@ -141,7 +140,7 @@ public class WebExceptionHandler {
     /** 空指针异常 */
     public final ResultModel handlerNullPointerException(NullPointerException e) {
         log.warn("发生空指针异常,异常内容为:{}", e);
-        exceptionService.handler(e);
+        exceptionService.handler(e,"handlerNullPointerException");
         return ResultModel.error(APIStatus.ERROR_3003.getCode(), "空指针异常");
     }
 
@@ -149,7 +148,7 @@ public class WebExceptionHandler {
     @ExceptionHandler(value = RuntimeException.class)
     public final ResultModel handleRuntimeException(Exception e) {
         log.warn(e.getMessage(), e);
-        exceptionService.handler(e);
+        exceptionService.handler(e,"RuntimeException");
         return ResultModel.error(APIStatus.ERROR_3001.getCode(), e.getMessage());
     }
 
@@ -157,7 +156,7 @@ public class WebExceptionHandler {
     public final ResultModel handlerHttpRequestMethodNotSupportedException(Throwable ex) {
         Exception exception = (Exception) ex;
         log.warn(exception.getMessage(), exception);
-        exceptionService.handler(exception);
+        exceptionService.handler(exception,"HttpRequestMethodNotSupportedException");
         return ResultModel.error(APIStatus.ERROR_2002);
     }
 
@@ -165,7 +164,7 @@ public class WebExceptionHandler {
     public final ResultModel handlerBeanPropertyBindingResult(Throwable ex) {
         Exception exception = (BindException) ex;
         log.error(exception.getMessage(), exception);
-        exceptionService.handler(exception);
+        exceptionService.handler(exception,"BindException");
         return ResultModel.error(APIStatus.ERROR_2001);
     }
 
@@ -175,7 +174,7 @@ public class WebExceptionHandler {
     @ExceptionHandler(MultipartException.class)
     public final ResultModel handleFileUploadException(MultipartException exception) {
         log.error("文件上传超大异常:"+exception.getMessage(), exception);
-        exceptionService.handler(exception);
+        exceptionService.handler(exception,"MultipartException");
         return ResultModel.error(APIStatus.ERROR_5001.getCode(),"文件太大了");
     }
 
@@ -186,7 +185,7 @@ public class WebExceptionHandler {
     public final ResultModel handleException(Throwable ex) {
         Exception exception = (Exception) ex;
         log.error(exception.getMessage(), exception);
-        exceptionService.handler(exception);
+        exceptionService.handler(exception,"Exception");
         return ResultModel.error(APIStatus.ERROR_6001);
     }
 

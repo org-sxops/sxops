@@ -25,4 +25,10 @@ public interface CarInfoService extends BaseService<CarInfo> {
      * @param isUpdate
      */
     void checkCarModelIsNotNull(CarInfo carInfo, boolean isUpdate);
+
+    /**
+     * 更新接口
+     * @param carInfo
+     */
+    CarInfo updateCarInfo(CarInfo carInfo);
 }

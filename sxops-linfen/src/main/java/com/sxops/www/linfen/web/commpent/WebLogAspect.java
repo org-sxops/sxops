@@ -58,7 +58,7 @@ public class WebLogAspect extends BaseWebLogAspect {
             operateLogService.insertSelective(operateLog);
         } catch (Exception e) {
             log.error("日志插入失败", e);
-            exceptionService.handler(e);
+            exceptionService.handler(e,"Exception");
         }
 
     }

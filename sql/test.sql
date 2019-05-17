@@ -77,6 +77,7 @@ CREATE TABLE `lf_user_associated` (
   `user_uuid` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '用户uuid',
   `other_uuid` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '其他属性UUID',
   `other_type` int(20) NOT NULL COMMENT '其他属性类型 ',
+  `enable` int(2) DEFAULT '1' COMMENT '是否启用',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户和其他业务关联表';
 

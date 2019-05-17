@@ -26,6 +26,8 @@ public class CarInfoServiceImpl extends BaseServiceImpl<CarInfo, CarInfoMapper> 
 
     @Autowired
     private UserAssociatedService userAssociatedService;
+    @Autowired
+    private LoginService loginService;
 
     @Override
     public CarInfo insertCarInfo(CarInfo carInfo) {
@@ -36,21 +38,8 @@ public class CarInfoServiceImpl extends BaseServiceImpl<CarInfo, CarInfoMapper> 
         carInfo.setUpdateTime(new Date());
         carInfo.setUuid(carInfoUUid);
         this.insert(carInfo);
-        this.insertUserAssociated(carInfoUUid,carInfo.getOwnedUserUuid());
+        userAssociatedService.insertOrUpdateModelByUuId(carInfo.getOwnedUserUuid(), carInfoUUid, carInfo.getEnable(), UserAssociatedEnum.OTHER_CAR.getOtherType());
         return carInfo;
-    }
-
-    /**
-     * 添加用户关联中间表
-     * @param carInfoUUid
-     * @param ownedUserUuid
-     */
-    private void insertUserAssociated(String carInfoUUid, String ownedUserUuid) {
-        UserAssociated userAssociated = new UserAssociated();
-        userAssociated.setUserUuid(ownedUserUuid);
-        userAssociated.setOtherUuid(carInfoUUid);
-        userAssociated.setOtherType(UserAssociatedEnum.OTHER_CAR.getOtherType());
-        userAssociatedService.insert(userAssociated);
     }
 
     /**
@@ -63,7 +52,7 @@ public class CarInfoServiceImpl extends BaseServiceImpl<CarInfo, CarInfoMapper> 
     public void checkCarModelIsNotNull(CarInfo CarInfo, boolean isUpdate) {
         log.info("模块:【车辆信息】，操作:【入库操作数据校验】参数：[ CarInfo: {}, 是否是更新操作： {}]", CarInfo.toString(), isUpdate);
         if (ObjectUtils.isEmpty(CarInfo)) {
-            throw new CarInfoException(APIStatus.ERROR_2001.getCode(),"车辆信息为空");
+            throw new CarInfoException(APIStatus.ERROR_2001.getCode(), "车辆信息为空");
         }
         StringBuffer buffer = new StringBuffer();
         if (isUpdate) {
@@ -74,17 +63,24 @@ public class CarInfoServiceImpl extends BaseServiceImpl<CarInfo, CarInfoMapper> 
                 buffer.append("UUID为空，");
             }
         }
-        if (StringUtils.isEmpty(CarInfo.getOwnedUserUuid())) {
-            buffer.append("车主信息为空，");
-        }
         if (StringUtils.isEmpty(CarInfo.getCarLicensePlate())) {
             buffer.append("车牌信息为空，");
         }
         if (buffer.length() > 0) {
             log.info("模块:【车辆信息】，操作:【入库操作数据校验】,参数：[ CarInfo: {}, 是否是更新操作： {}],错误信息：{}", CarInfo.toString(), isUpdate, buffer.toString());
-            throw new CarInfoException(APIStatus.ERROR_2001.getCode(),"车辆信息中:" + buffer.toString() + " 不允许进行入库操作");
+            throw new CarInfoException(APIStatus.ERROR_2001.getCode(), "车辆信息中:" + buffer.toString() + " 不允许进行入库操作");
         }
+        CarInfo.setOwnedUserUuid(loginService.getLoginUser().getUuid());
 
+    }
+
+
+    @Override
+    public CarInfo updateCarInfo(CarInfo carInfo) {
+        this.checkCarModelIsNotNull(carInfo, true);
+        this.updateByPrimaryKey(carInfo);
+        userAssociatedService.insertOrUpdateModelByUuId(carInfo.getOwnedUserUuid(), carInfo.getUuid(), carInfo.getEnable(), UserAssociatedEnum.OTHER_CAR.getOtherType());
+        return null;
     }
 
     /**

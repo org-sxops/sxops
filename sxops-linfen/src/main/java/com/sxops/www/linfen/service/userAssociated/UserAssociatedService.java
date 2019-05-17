@@ -15,5 +15,5 @@ public interface UserAssociatedService extends BaseService<UserAssociated> {
      * @param enable 是否启用
      * @param otherType 类型
      */
-    void updateModelByUuId(String ownedUserUuid, String otherUuid, Integer enable, Integer otherType);
+    void insertOrUpdateModelByUuId(String ownedUserUuid, String otherUuid, Integer enable, Integer otherType);
 }

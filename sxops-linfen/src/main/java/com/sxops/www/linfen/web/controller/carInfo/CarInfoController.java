@@ -54,10 +54,7 @@ public class CarInfoController {
     @OpLog(desc = "车辆信息更新接口")
     public CarInfo updateCar(@RequestBody CarInfo carInfo) {
             log.info("模块：【车辆信息】，操作：【车辆信息更新接口】,参数：【{}】", carInfo.toString());
-            carInfoService.checkCarModelIsNotNull(carInfo, true);
-            carInfoService.updateByPrimaryKey(carInfo);
-            userAssociatedService.updateModelByUuId(carInfo.getOwnedUserUuid(),carInfo.getUuid(),carInfo.getEnable(), UserAssociatedEnum.OTHER_CAR.getOtherType());
-            return  carInfo;
+        return carInfoService.updateCarInfo(carInfo);
     }
 
 }

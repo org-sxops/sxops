@@ -8,7 +8,9 @@ import com.sxops.www.linfen.service.basic.ExceptionLogService;
 import com.sxops.www.linfen.service.basic.ExceptionService;
 import com.sxops.www.linfen.service.login.LoginService;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -38,33 +40,10 @@ public class ExceptionServiceImpl implements ExceptionService {
     @Autowired
     private LoginService loginService;
 
-    @Override
-    public void handler(Object user, Exception e, HttpServletRequest request) {
 
-    }
 
     @Override
-    public void sendMail(ExceptionLog exceptionLog) {
-
-    }
-
-    @Override
-    public void handler(String exceptionMsg, Exception e, HttpServletRequest request) {
-
-    }
-
-    @Override
-    public void handler(String userCode, String exceptionMsg, Exception e, HttpServletRequest request) {
-
-    }
-
-    @Override
-    public void handler(Object user, Exception e) {
-
-    }
-
-    @Override
-    public void handler(Exception e) {
+    public void handler(Exception e,String message) {
         try {
             ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
             HttpServletRequest request = servletRequestAttributes.getRequest();
@@ -73,12 +52,12 @@ public class ExceptionServiceImpl implements ExceptionService {
             if (e instanceof AbstractBasicException) {
                 AbstractBasicException basicException = (AbstractBasicException) e;
                 exceptionMsg = "[" + basicException.getCode() + "]" + basicException.getMessage();
-                exceptionLog.setExceptionType("自定义异常");
+                exceptionLog.setDescription(exceptionMsg);
             } else {
-                exceptionMsg = e.getMessage();
-                exceptionLog.setExceptionType("系统异常");
+                exceptionLog.setDescription("其他异常信息");
             }
-            exceptionLog.setDescription(exceptionMsg);
+            exceptionLog.setExceptionType(message);
+
             if (request != null) {
                 exceptionLog.setOperatorIp(NetUtil.getIpAddr(request));
                 exceptionLog.setUri(request.getRequestURI());
@@ -91,14 +70,10 @@ public class ExceptionServiceImpl implements ExceptionService {
                 exceptionLog.setOperator(username);
             }
             //输出错误堆栈
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            PrintStream ps = new PrintStream(outputStream);
-            e.printStackTrace(ps);
-            exceptionLog.setDetail(outputStream.toString());
+            exceptionLog.setDetail(e.toString());
             exceptionLog.setCreateTime(new Date());
             exceptionLog.setHostName(InetAddress.getLocalHost().getHostName());
             exceptionLogService.insert(exceptionLog);
-            sendMail(exceptionLog);
         } catch (Exception e1) {
             log.warn("存储异常日志失败", e1);
         }
