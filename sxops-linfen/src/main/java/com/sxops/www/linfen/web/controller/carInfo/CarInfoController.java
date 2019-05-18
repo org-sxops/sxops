@@ -24,8 +24,6 @@ public class CarInfoController {
 
     @Autowired
     private CarInfoService carInfoService;
-    @Autowired
-    private UserAssociatedService userAssociatedService;
 
 
     @ApiOperation(value = "新增接口,[geweiHome@163.com]")
