@@ -1,8 +1,11 @@
 package com.sxops.www.thirdApi.thirdVo;
 
+import lombok.Data;
+
 /**
  * 城市列表
  */
+@Data
 public class Citie {
     /**
      * 名称
