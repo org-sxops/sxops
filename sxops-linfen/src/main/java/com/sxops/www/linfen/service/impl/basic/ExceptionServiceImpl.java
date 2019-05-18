@@ -8,17 +8,13 @@ import com.sxops.www.linfen.service.basic.ExceptionLogService;
 import com.sxops.www.linfen.service.basic.ExceptionService;
 import com.sxops.www.linfen.service.login.LoginService;
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.net.InetAddress;
 import java.util.Date;
 
@@ -54,7 +50,7 @@ public class ExceptionServiceImpl implements ExceptionService {
                 exceptionMsg = "[" + basicException.getCode() + "]" + basicException.getMessage();
                 exceptionLog.setDescription(exceptionMsg);
             } else {
-                exceptionLog.setDescription("其他异常信息");
+                exceptionLog.setDescription("系统异常信息");
             }
             exceptionLog.setExceptionType(message);
 

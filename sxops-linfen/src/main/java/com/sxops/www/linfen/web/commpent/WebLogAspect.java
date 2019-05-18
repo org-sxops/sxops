@@ -2,7 +2,6 @@ package com.sxops.www.linfen.web.commpent;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sxops.www.common.component.BaseWebLogAspect;
-import com.sxops.www.common.enums.OpLogSystem;
 import com.sxops.www.linfen.dao.model.basic.OperateLog;
 import com.sxops.www.linfen.dao.model.userInfo.UserInfo;
 import com.sxops.www.linfen.service.basic.ExceptionService;
