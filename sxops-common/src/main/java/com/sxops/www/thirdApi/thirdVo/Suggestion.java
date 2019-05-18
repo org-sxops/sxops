@@ -18,11 +18,4 @@ public class Suggestion {
      */
     private List<Citie> cities;
 
-    public Suggestion() {
-    }
-
-    public Suggestion(List<String> keywords, List<Citie> cities) {
-        this.keywords = keywords;
-        this.cities = cities;
-    }
 }

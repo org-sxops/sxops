@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public abstract class AbstractThirdApiResponseVo {
+public class AbstractThirdApiResponse<T> {
     /**
      * 状态码
      */
@@ -28,14 +28,5 @@ public abstract class AbstractThirdApiResponseVo {
      */
     private List<District> districts;
 
-    public AbstractThirdApiResponseVo(String status, String info, String count, Suggestion suggestion, List<District> districts) {
-        this.status = status;
-        this.info = info;
-        this.count = count;
-        this.suggestion = suggestion;
-        this.districts = districts;
-    }
 
-    public AbstractThirdApiResponseVo() {
-    }
 }

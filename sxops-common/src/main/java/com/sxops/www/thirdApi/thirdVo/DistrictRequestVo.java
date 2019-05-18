@@ -1,12 +1,14 @@
 package com.sxops.www.thirdApi.thirdVo;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 /**
  * 行政区域查询对象
  */
+@ApiModel(value = "DistrictRequestVo",description = "行政区域查询对象")
 @Data
-public class DistrictRequestVo extends AbstractThirdApiRequestVo {
+public class DistrictRequestVo  {
     /**
      * 查询关键字
      */
@@ -40,19 +42,4 @@ public class DistrictRequestVo extends AbstractThirdApiRequestVo {
      */
     private String callback;
 
-    public DistrictRequestVo(String key) {
-        super(key);
-    }
-
-    public DistrictRequestVo(String key, String keywords, Integer subdistrict, String filter, Integer page, Integer offset, String extensions, String output, String callback) {
-        super(key);
-        this.keywords = keywords;
-        this.subdistrict = subdistrict;
-        this.filter = filter;
-        this.page = page;
-        this.offset = offset;
-        this.extensions = extensions;
-        this.output = "JSON";
-        this.callback = callback;
-    }
 }

@@ -50,7 +50,12 @@ public enum APIStatus {
      * 其他自定义
      */
 
-    ERROR_6001(6001, "其他错误", ""),
+    ERROR_6001(6001, "服务器内部错误", ""),
+
+    /** HTTP请求异常 */
+    ERROR_7001(7001, "调用外部接口错误", ""),
+
+
     ;
 
     private int code;

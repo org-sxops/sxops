@@ -1,8 +1,11 @@
 package com.sxops.www.thirdApi.service;
 
-import com.sxops.www.thirdApi.thirdVo.AbstractThirdApiResponseVo;
+import com.sxops.www.thirdApi.thirdVo.AbstractThirdApiResponse;
+import com.sxops.www.thirdApi.thirdVo.District;
 import com.sxops.www.thirdApi.thirdVo.DistrictRequestVo;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @ClassName DistrictService
@@ -15,11 +18,11 @@ import org.springframework.stereotype.Repository;
 public interface DistrictService {
 
     /**
-     * @return com.sxops.www.thirdApi.thirdVo.AbstractThirdApiResponseVo
+     * @return com.sxops.www.thirdApi.thirdVo.AbstractThirdApiResponse
      * @Description 根据参数获取行政区划列表
      * @Author gewei [geweihome@163.com]
      * @Date 16:52 2019-05-18
      * @Param [abstractThirdApiRequestVo]
      **/
-    AbstractThirdApiResponseVo getDistrictByParam(DistrictRequestVo districtRequestVo);
+    public List<District> getDistrictByParam(DistrictRequestVo districtRequestVo);
 }

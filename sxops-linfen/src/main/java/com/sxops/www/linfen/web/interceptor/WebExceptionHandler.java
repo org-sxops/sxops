@@ -107,16 +107,6 @@ public class WebExceptionHandler {
     }
 
     /**
-     * 键重复异常捕获并处理
-     */
-    @ExceptionHandler(value = DuplicateKeyException.class)
-    public final ResultModel handlerDuplicateKeyException(DuplicateKeyException e) {
-        log.warn("键重复异常:", e);
-        exceptionService.handler(e,"DuplicateKeyException");
-        return ResultModel.error(APIStatus.ERROR_4002);
-    }
-
-    /**
      * 数据库抛出的其他异常
      */
     @ExceptionHandler(value = DataAccessException.class)
@@ -128,29 +118,40 @@ public class WebExceptionHandler {
     }
 
     /**
+     * 键重复异常捕获并处理
+     */
+    @ExceptionHandler(value = DuplicateKeyException.class)
+    public final ResultModel handlerDuplicateKeyException(DuplicateKeyException e) {
+        log.warn("键重复异常:", e);
+        exceptionService.handler(e,"DuplicateKeyException");
+        return ResultModel.error(APIStatus.ERROR_4002);
+    }
+
+
+    /**
      * 运行时异常
      */
     @ExceptionHandler(value = TransactionTimedOutException.class)
     public final ResultModel handleTransactionTimedOutException(Exception e) {
         exceptionService.handler(e,"TransactionTimedOutException");
         log.warn(e.getMessage(), e);
-        return ResultModel.error(APIStatus.ERROR_3003);
+        return ResultModel.error(APIStatus.ERROR_3001);
+    }
+    /** 运行时异常 */
+    @ExceptionHandler(value = RuntimeException.class)
+    public final ResultModel handleRuntimeException(Exception e) {
+        log.warn(e.getMessage(), e);
+        exceptionService.handler(e,"RuntimeException");
+        return ResultModel.error(APIStatus.ERROR_3002);
     }
 
     /** 空指针异常 */
     public final ResultModel handlerNullPointerException(NullPointerException e) {
         log.warn("发生空指针异常,异常内容为:{}", e);
         exceptionService.handler(e,"handlerNullPointerException");
-        return ResultModel.error(APIStatus.ERROR_3003.getCode(), "空指针异常");
+        return ResultModel.error(APIStatus.ERROR_3003);
     }
 
-    /** 运行时异常 */
-    @ExceptionHandler(value = RuntimeException.class)
-    public final ResultModel handleRuntimeException(Exception e) {
-        log.warn(e.getMessage(), e);
-        exceptionService.handler(e,"RuntimeException");
-        return ResultModel.error(APIStatus.ERROR_3001.getCode(), e.getMessage());
-    }
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public final ResultModel handlerHttpRequestMethodNotSupportedException(Throwable ex) {
@@ -175,7 +176,7 @@ public class WebExceptionHandler {
     public final ResultModel handleFileUploadException(MultipartException exception) {
         log.error("文件上传超大异常:"+exception.getMessage(), exception);
         exceptionService.handler(exception,"MultipartException");
-        return ResultModel.error(APIStatus.ERROR_5001.getCode(),"文件太大了");
+        return ResultModel.error(APIStatus.ERROR_5001);
     }
 
     /**

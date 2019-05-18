@@ -8,7 +8,7 @@ import java.util.List;
  * 行政区信息
  */
 @Data
-public class District extends AbstractThirdApiResponseVo {
+public class District  {
     /**
      * 城市编码
      */
@@ -43,16 +43,5 @@ public class District extends AbstractThirdApiResponseVo {
      */
     private List<District> districts;
 
-    public District() {
-    }
 
-    public District(String citycode, String adcode, String name, String polyline, String center, String level, List<District> districts) {
-        this.citycode = citycode;
-        this.adcode = adcode;
-        this.name = name;
-        this.polyline = polyline;
-        this.center = center;
-        this.level = level;
-        this.districts = districts;
-    }
 }

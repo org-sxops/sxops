@@ -79,7 +79,7 @@ pagehelper:
 
 third-api:
   #行政区划查询
-  district-url: https://restapi.amap.com/v3/config/district?parameters
+  district-url: https://restapi.amap.com/v3/config/district
   district-key: 02f0d9cb6bcffc9698f6d11603138e7e
   district-method: GET
 

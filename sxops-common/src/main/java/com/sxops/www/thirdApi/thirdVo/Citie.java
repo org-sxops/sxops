@@ -24,13 +24,5 @@ public class Citie {
      */
     private String adcode;
 
-    public Citie() {
-    }
 
-    public Citie(String name, String num, String citycode, String adcode) {
-        this.name = name;
-        this.num = num;
-        this.citycode = citycode;
-        this.adcode = adcode;
-    }
 }
