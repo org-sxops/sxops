@@ -24,5 +24,5 @@ public interface DistrictService {
      * @Date 16:52 2019-05-18
      * @Param [abstractThirdApiRequestVo]
      **/
-    public List<District> getDistrictByParam(DistrictRequestVo districtRequestVo);
+     List<District> getDistrictByParam(DistrictRequestVo districtRequestVo);
 }
