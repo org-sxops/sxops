@@ -208,21 +208,11 @@
 			</dependency>
 
 			<!--camelot base start-->
-			<dependency>
+			<!--<dependency>
 				<groupId>com.sxops.www</groupId>
 				<artifactId>sxops-common</artifactId>
 				<version>${test.test.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.sxops.www</groupId>
-				<artifactId>sxops-dao</artifactId>
-				<version>${test.test.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.sxops.www</groupId>
-				<artifactId>sxops-service</artifactId>
-				<version>${test.test.version}</version>
-			</dependency>
+			</dependency>-->
 			<!--camelot base end-->
 
 		</dependencies>
