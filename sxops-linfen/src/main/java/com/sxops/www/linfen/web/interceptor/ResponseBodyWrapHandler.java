@@ -50,7 +50,7 @@ public class ResponseBodyWrapHandler implements HandlerMethodReturnValueHandler 
      * @return
      * @author <a href="mailto: xiyang@camelotchina.com">息阳</a>
      * @version 1.0
-     * Copyright (c) 2018年 北京柯莱特科技有限公司
+     * Copyright (c) 2018年
      */
     private Object changeResult(Object body) {
 
@@ -79,7 +79,7 @@ public class ResponseBodyWrapHandler implements HandlerMethodReturnValueHandler 
      * @return request请求类型
      * @author <a href="mailto: xiyang@camelotchina.com">息阳</a>
      * @version 1.0
-     * Copyright (c) 2018年 北京柯莱特科技有限公司
+     * Copyright (c) 2018年
      */
     private String getRequestMethodStr() {
         String requestMethodStr = "";
