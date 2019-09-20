@@ -45,7 +45,7 @@ public class CookieHelper {
 	 */
 	public static void setHttpOnlyCookie(HttpServletResponse response, String name, String value) {
 		Date d = new Date(System.currentTimeMillis()+COOKIE_MAX_AGE);
-		response.addHeader("Set-Cookie", name+"="+value+";Expires="+d.toGMTString()+"; Path=/;HttpOnly");
+		response.addHeader("Set-Cookie", name+"="+value+";Expires="+ d.toString() +"; Path=/;HttpOnly");
 	}
 	
 	/**
