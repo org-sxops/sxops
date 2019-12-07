@@ -11,7 +11,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -73,6 +75,29 @@ public class UserInfoServiceImpl extends BaseServiceImpl<UserInfo, UserInfoMappe
         String uuid = UUID.randomUUID().toString();
         uuid = uuid.replace("-", "");
         return uuid;
+    }
+
+    public static void main(String[] args) {
+        String str = "pwwspfwd1fghjmiuy1tfghlk1jhgjkjj1lkjhgfty11jhbvfghb1vfdvhj";
+        char[] chars = str.toCharArray();
+        String maxStr = "";
+        String temp = "";
+        List<String> list = new ArrayList<>();
+        for (char cha : chars) {
+            if(StringUtils.isNotEmpty(maxStr) && temp.contains(String.valueOf(cha))){
+                list.add(temp);
+                temp = String.valueOf(cha);
+            }else{
+                temp =  temp.concat(String.valueOf(cha));
+            }
+            if(temp.length() > maxStr.length()){
+                maxStr = temp;
+            }
+        }
+        list.add(temp);
+        System.out.println("所有不重复的字符串："+list.toString());
+        System.out.println("最大长度不重复的字符串："+maxStr);
+
     }
 
 
