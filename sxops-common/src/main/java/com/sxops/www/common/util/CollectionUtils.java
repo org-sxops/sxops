@@ -16,7 +16,7 @@ import java.util.*;
  *
  * @author <a href="mailto: wuchaoqiang@sxops.com">武超强</a>
  * @version 1.0
- *          Copyright (c) 2016 山西省壹加柒网络技术有限公司 交付部
+ *          Copyright (c) 2016 山西省壹加柒网络技术有限公司
  */
 public class CollectionUtils {
 

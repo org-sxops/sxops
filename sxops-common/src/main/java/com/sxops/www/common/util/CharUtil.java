@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * Created on 2018年1月6日
  * @author  <a href="mailto:liuxiangping@sxops.com">葛伟</a>
  * @version 1.0 
- * Copyright (c) 2018 山西省壹加柒网络技术有限公司 交付部
+ * Copyright (c) 2018 山西省壹加柒网络技术有限公司
  */
 public class CharUtil {
 

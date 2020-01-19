@@ -10,7 +10,7 @@ import java.security.SecureRandom;
  * <p>Description: [AES对称加密和解密]</p>
  * Created on 2018年1月5日
  * @author <a href="mailto: liqun@sxops.com">liqun</a>
- * @version 1.0 Copyright (c) 2017 山西省壹加柒网络技术有限公司 交付部
+ * @version 1.0 Copyright (c) 2017 山西省壹加柒网络技术有限公司
  */
 public class AESUtils {
 

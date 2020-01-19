@@ -7,7 +7,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * <p>Description: [ajax返回前台信息vo]</p>
  * Created on 2016年3月31日
- * Copyright (c) 2016 山西省壹加柒网络技术有限公司 交付部
+ * Copyright (c) 2016 山西省壹加柒网络技术有限公司
  * @author <a href="mailto: liuchao@sxops.com">葛伟</a>
  * @version 1.0
  */

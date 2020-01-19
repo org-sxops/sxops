@@ -13,7 +13,7 @@ import java.util.Date;
  * Created on 2015年3月5日
  * @author  <a href="mailto: gewei@sxops.com">Goma 葛伟</a>
  * @version 1.0 
- * Copyright (c) 2015 山西省壹加柒网络技术有限公司 交付部
+ * Copyright (c) 2015 山西省壹加柒网络技术有限公司
  */
 public class CookieHelper {
 

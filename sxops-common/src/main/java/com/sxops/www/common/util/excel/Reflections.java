@@ -19,7 +19,7 @@ import org.springframework.util.Assert;
  * Created on 2015-04-17
  * @author calvin
  * @version 1.0
- * Copyright (c) 2015 山西省壹加柒网络技术有限公司 交付部
+ * Copyright (c) 2015 山西省壹加柒网络技术有限公司
  */
 @SuppressWarnings("rawtypes")
 public class Reflections {

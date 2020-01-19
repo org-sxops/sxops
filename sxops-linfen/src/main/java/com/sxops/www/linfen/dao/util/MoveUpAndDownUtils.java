@@ -137,7 +137,7 @@ public class MoveUpAndDownUtils<T> {
 	 * Created on 2016年12月9日
 	 * @author  <a href="mailto: hanshixiong@sxops.com">韩士雄</a>
 	 * @version 1.0 
-	 * Copyright (c) 2016 山西省壹加柒网络技术有限公司 交付部
+	 * Copyright (c) 2016 山西省壹加柒网络技术有限公司
 	 */
 	class ComparatorBySort<Object> implements Comparator<Object> {
 		@Override

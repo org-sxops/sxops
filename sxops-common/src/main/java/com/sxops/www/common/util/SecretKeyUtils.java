@@ -11,7 +11,7 @@ import java.security.NoSuchAlgorithmException;
  *
  * @author: <a href="mailto: liqun@sxops.com">liqun<br/>
  * @version: 1.0 <br/>
- * Copyright (c) 2016年 山西省壹加柒网络技术有限公司 交付部
+ * Copyright (c) 2016年 山西省壹加柒网络技术有限公司
  */
 public class SecretKeyUtils {
 

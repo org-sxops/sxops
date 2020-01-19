@@ -26,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Description: [http请求] Created on 2018/8/7 13:55
  *
- * @author 郭东旭 Copyright (c)  交付部
+ * @author 葛伟 Copyright (c)
  */
 @Slf4j
 @ManagedBean("httpRequest")

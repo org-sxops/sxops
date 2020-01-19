@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * Created on 2017年12月21日
  * @author  <a href="mailto:liuxiangping@sxops.com">葛伟</a>
  * @version 1.0 
- * Copyright (c) 2017 山西省壹加柒网络技术有限公司 交付部
+ * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  */
 @Component
 public class CommonInterceptor extends HandlerInterceptorAdapter {
