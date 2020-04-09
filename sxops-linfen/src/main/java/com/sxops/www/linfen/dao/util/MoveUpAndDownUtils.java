@@ -12,7 +12,7 @@ import java.util.List;
  * <p>Description: [上下移动工具类]</p>
  * Created on 2016年12月9日
  * 
- * @author <a href="mailto: yinguijin@sxops.com">葛伟</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 public class MoveUpAndDownUtils<T> {

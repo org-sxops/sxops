@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
 /** 
  * <p>Description: [过滤多个相同属性拼接问题，只取第一个属性值]</p>
  * Created on 2017年11月20日
- * @author  <a href="mailto: yinguijin@sxops.com">葛伟</a>
+ * @author  <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0 
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  */ 

@@ -122,7 +122,6 @@ public class HttpRequestUtils {
      * @param clazz 请求返回值类型(如果你用Json方式取值则可以写 String.class)
      * @param <T>   泛型
      * @return Response返回对象
-     * @author: <a href="mailto: xiyang@camelotchina.com">息阳</a>
      * @version 1.0
      */
     public <T> ResponseEntity<T> sendPostRequest(String url, String json, Class<T> clazz) {
@@ -161,7 +160,6 @@ public class HttpRequestUtils {
      * @param clazz 请求返回值类型(如果你用Json方式取值则可以写 String.class)
      * @param <T>   泛型
      * @return Response返回对象
-     * @author: <a href="mailto: xiyang@camelotchina.com">刘香平</a>
      * @version 1.0
      */
     public <T> ResponseEntity<T> sendPostRequest(String url, String json, Class<T> clazz, String token) {

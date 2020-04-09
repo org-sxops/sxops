@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * <p>Description: [拦截器]</p>
  * Created on 2017年12月21日
- * @author  <a href="mailto:liuxiangping@sxops.com">葛伟</a>
+ * @author  <a href="mailto:gewei@sxops.com">葛伟</a>
  * @version 1.0 
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  */

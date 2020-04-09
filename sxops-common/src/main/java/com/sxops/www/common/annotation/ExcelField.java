@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
  * Copyright (c) 2017 山西省壹加柒网络技术有限公司
  * Created on 2017年11月09日
  *
- * @author <a href="mailto: yinguijin@sxops.com">葛伟</a>
+ * @author <a href="mailto: gewei@sxops.com">葛伟</a>
  * @version 1.0
  */
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.TYPE})

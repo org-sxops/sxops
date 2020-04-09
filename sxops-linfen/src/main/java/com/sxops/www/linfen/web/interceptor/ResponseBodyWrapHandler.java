@@ -48,7 +48,6 @@ public class ResponseBodyWrapHandler implements HandlerMethodReturnValueHandler 
      *
      * @param body
      * @return
-     * @author <a href="mailto: xiyang@camelotchina.com">息阳</a>
      * @version 1.0
      * Copyright (c) 2018年
      */
@@ -77,7 +76,6 @@ public class ResponseBodyWrapHandler implements HandlerMethodReturnValueHandler 
      * Created on 2018年10月12日 下午3:03:04
      *
      * @return request请求类型
-     * @author <a href="mailto: xiyang@camelotchina.com">息阳</a>
      * @version 1.0
      * Copyright (c) 2018年
      */
